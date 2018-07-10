@@ -1,6 +1,6 @@
 import React from 'react';
 
-class ProjectsNew extends React.Component {
+class DevelopersNew extends React.Component {
 
 
   render() {
@@ -12,4 +12,4 @@ class ProjectsNew extends React.Component {
 }
 
 
-export default ProjectsNew;
+export default DevelopersNew;

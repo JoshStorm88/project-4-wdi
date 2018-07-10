@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const developers = require('../controllers/developers');
+const auth = require('../controllers/auth');
 
 
 router.route('/developers')
@@ -11,10 +12,8 @@ router.route('/developers/:id')
   .put(developers.update)
   .delete(developers.delete);
 
-// add later when we need to register/login users
-// router.post('/register', authDev.register);
-// router.post('/login', authDev.login);
-// router.post('/register', authUser.register);
-// router.post('/login', authUser.login);
+router.post('/register', auth.register);
+router.post('/login', auth.login);
+
 
 module.exports = router;

@@ -1,15 +1,16 @@
 import React from 'react';
 
-class ProjectsNew extends React.Component {
-
+class DevelopersShow extends React.Component {
 
   render() {
     return (
       <div className="columns">
       </div>
     );
+
   }
+
 }
 
 
-export default ProjectsNew;
+export default DevelopersShow;
