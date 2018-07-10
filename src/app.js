@@ -6,8 +6,10 @@ import Home from './components/pages/Home';
 import Navbar from './components/common/Navbar';
 
 import ProjectsNew from './components/projects/New';
+
 import DevelopersIndex from './components/developers/Index';
 import DevelopersEdit from './components/developers/Edit';
+
 
 import AuthRegister from './components/auth/Register';
 import AuthLogin from './components/auth/Login';
