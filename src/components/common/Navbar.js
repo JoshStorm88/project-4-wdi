@@ -17,7 +17,7 @@ class Navbar extends React.Component {
         <div className="navbar-brand">
 
           <a to="/" className="navbar-item"
-            href="#">
+            href="/">
             <img src="https://i.imgur.com/M0fInVz.png"
               alt="Four Horsemen Development Platform" />
           </a>

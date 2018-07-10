@@ -17,7 +17,7 @@ class AuthRegister extends React.Component {
 
   render() {
     return(
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <div className="field">
           <label className="username">Username</label>
           <input className="input" name="username" placeholder="username" />
