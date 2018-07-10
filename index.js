@@ -16,6 +16,6 @@ mongoose.connect(dbURI);
 app.use(bodyParser.json());
 app.use('/api', routes);
 
-app.listen(port, () => console.log(`Galloping towards ${port}`));
+app.listen(port, () => console.log(`Galloping towards port ${port}`));
 
 module.exports = app;
