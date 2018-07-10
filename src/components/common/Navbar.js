@@ -1,7 +1,15 @@
 import React from 'react';
-import { a } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 class Navbar extends React.Component {
+
+  state = {
+    navbarOpen: false
+  }
+
+  toggleNavbar = () => {
+    this.setState({ navbarOpen: !this.state.navbarOpen });
+  }
 
   render() {
     return (
@@ -11,29 +19,29 @@ class Navbar extends React.Component {
           <a to="/" className="navbar-item"
             href="#">
             <img src="https://i.imgur.com/M0fInVz.png"
-              alt="Bulma: a modern CSS framework based on Flexbox" />
+              alt="Four Horsemen Development Platform" />
           </a>
 
-          <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false">
+          <a role="button" className={`navbar-burger${this.state.navbarOpen ? ' is-active' : ''}`} aria-label="menu" aria-expanded="false"
+            onClick={this.toggleNavbar}>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
           </a>
         </div>
 
-        <div className="navbar-menu">
+        <div className={`navbar-menu${this.state.navbarOpen ? ' is-active' : ''}`}>
           <div className="navbar-end">
-            <a className="navbar-item">Login</a>
-            <a className="navbar-item">Register</a>
-            <a className="navbar-item">New project</a>
+            <Link to="/login" className="navbar-item">Login</Link>
+            <Link to="/register" className="navbar-item">Register</Link>
+            <Link to="/projects/new" className="navbar-item">New Project</Link>
 
           </div>
         </div>
-
       </nav>
     );
   }
 }
 
 
-export default Navbar;
+export default withRouter(Navbar);
