@@ -12,42 +12,42 @@ mongoose.connect(dbURI, (err, db) => {
       companyName: 'Marks & Spencer Ltd',
       companySize: 'Large',
       description: 'C',
-      image: 'D',
+      image: 'https://pbs.twimg.com/profile_images/1706286797/M_Slogo_400x400.jpg',
       skills: 'Python, Ruby, Javascript',
       location: 'Kingston Upon Thames'
     },{
-      companyName: 'Achllieus Designs',
+      companyName: 'Achilleus Designs',
       companySize: 'Small',
       description: 'C',
-      image: 'D',
+      image: 'https://s3-media2.fl.yelpcdn.com/bphoto/zcI5ktHMaO7GTMRQo02Zjg/l.jpg',
       skills: 'Bulma, Angular',
       location: 'Manhatten'
     },{
       companyName: 'MI6',
       companySize: 'Unknown',
       description: 'Unknown',
-      image: 'Unknown',
+      image: 'https://pbs.twimg.com/profile_images/1132279153/MI6-col_neg_400x400.jpg',
       skills: 'Unknown',
       location: 'Unknown'
     },{
       companyName: 'Network Code',
       companySize: 'Medium',
       description: 'C',
-      image: 'D',
+      image: 'https://pbs.twimg.com/profile_images/696378871126462464/c2DJbncv_400x400.png',
       skills: 'React.js, Sass, Node.js, Ruby on Rails',
       location: 'London'
     },{
       companyName: 'Julian & Gerry Coders',
       companySize: 'Medium',
       description: 'C',
-      image: 'D',
+      image: 'https://pbs.twimg.com/profile_images/896001072015314945/6xIWXrOx_400x400.jpg',
       skills: 'Witty Retorts, French Accents, Javascript, React.js, Normalize',
       location: 'Paris'
     },{
       companyName: 'Mike & Nicks\' Websites',
       companySize: 'Small',
       description: 'C',
-      image: 'D',
+      image: 'https://pbs.twimg.com/profile_images/454345227587690496/PWMftTUJ_400x400.jpeg',
       skills: 'Bulma, Art, Ruby, Python, PHP, Javascript, React.js, Angular.js',
       location: 'Birmingham'
 
