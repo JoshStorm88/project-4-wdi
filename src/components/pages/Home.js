@@ -2,26 +2,16 @@ import React from 'react';
 
 const Home = () => {
   return (
-    <section className="hero is-primary is-large">
-      <div className="hero-head">
-        <nav className="navbar">
-          <div className="container">
-
-            <div id="navbarMenuHeroA" className="navbar-menu">
-              <div className="navbar-end">
-                <a className="navbar-item is-active">
-                  Home
-                </a>
-                <a className="navbar-item">
-                  Login
-                </a>
-                <a className="navbar-item">
-                  Register
-                </a>
-              </div>
-            </div>
-          </div>
-        </nav>
+    <section className="hero is-Primary is-large">
+      <div className="hero-body">
+        <div className="container">
+          <h1 className="title">
+            Four Horsemen Development Platform
+          </h1>
+          <h2 className="subtitle">
+            No Design experience? Its not the end of the world.
+          </h2>
+        </div>
       </div>
     </section>
   );
