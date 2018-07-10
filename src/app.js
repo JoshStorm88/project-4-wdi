@@ -9,6 +9,7 @@ import ProjectsNew from './components/projects/New';
 
 import DevelopersIndex from './components/developers/Index';
 import DevelopersEdit from './components/developers/Edit';
+import DevelopersNew from './components/developers/New';
 
 
 import AuthRegister from './components/auth/Register';
@@ -30,6 +31,7 @@ class App extends React.Component {
                 <Route path="/projects/new" component={ProjectsNew} />
                 <Route path="/register" component={AuthRegister} />
                 <Route path="/login" component={AuthLogin} />
+                <Route path="/developers/new" component={DevelopersNew} />
                 <Route path="/developers" component={DevelopersIndex} />
                 <Route path="/developers/:id/edit" component={DevelopersEdit} />
               </Switch>
