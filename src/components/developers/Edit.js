@@ -4,7 +4,7 @@ class DevelopersEdit extends React.Component {
   render() {
     return(
       <form>
-        
+
       </form>
     );
   }

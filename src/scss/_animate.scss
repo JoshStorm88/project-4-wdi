@@ -1,0 +1,95 @@
+
+.text-wrapper {
+    text-align: left;
+    margin:15px 0;
+}
+.animated-words {
+    display: inline-block;
+}
+.animated-words .nl:nth-child(2) {
+    -webkit-animation-delay: 3s;
+    -ms-animation-delay: 3s;
+    animation-delay: 3s;
+    color: #6b889d;
+}
+.animated-words .nl:nth-child(3) {
+    -webkit-animation-delay: 6s;
+    -ms-animation-delay: 6s;
+    animation-delay: 6s;
+    color: #6b739d;
+}
+.animated-words .nl:nth-child(4) {
+    -webkit-animation-delay: 9s;
+    -ms-animation-delay: 9s;
+    animation-delay: 9s;
+    color: #7a6b9d;
+}
+.animated-words .nl:nth-child(5) {
+    -webkit-animation-delay: 12s;
+    -ms-animation-delay: 12s;
+    animation-delay: 12s;
+    color: #8d6b9d;
+}
+.animated-words .nl:nth-child(6) {
+    -webkit-animation-delay: 15s;
+    -ms-animation-delay: 15s;
+    animation-delay: 15s;
+    color: #8d6b9d;
+}
+.animated-words .nl:nth-child(7) {
+    -webkit-animation-delay: 18s;
+    -ms-animation-delay: 18s;
+    animation-delay: 18s;
+    color: #8d6b9d;
+}
+.animated-words .last:nth-child(8) {
+    -webkit-animation-delay: 21s;
+    -ms-animation-delay: 21s;
+    animation-delay: 21s;
+    color: #9b6b9d;
+}
+.animated-words .nl {
+    position: absolute;
+    opacity: 0;
+    overflow: visible;
+    color: #6b969d;
+    -webkit-animation: animateWord 24s linear 1 0s;
+    -ms-animation: animateWord 24s linear 1 0s;
+    animation: animateWord 24s linear 1 0s;
+}
+@-webkit-keyframes animateWord {
+    0% { opacity: 0; }
+    2% { opacity: 0; -webkit-transform: translateY(-30px); }
+    5% { opacity: 1; -webkit-transform: translateY(0px);}
+    17% { opacity: 1; -webkit-transform: translateY(0px); }
+    20% { opacity: 0; -webkit-transform: translateY(30px); }
+    80% { opacity: 0; }
+    100% { opacity: 0; }
+}
+.animated-words .last {
+    position: absolute;
+    opacity: 0;
+    overflow: hidden;
+    color: #6b969d;
+    -webkit-animation: animateWordLast 24s linear 1 0s;
+    -ms-animation: animateWordLast 24s linear 1 0s;
+    animation: animateWordLast 24s linear 1 0s;
+}
+@-webkit-keyframes animateWordLast {
+    0% { opacity: 0; }
+    2% { opacity: 0; -webkit-transform: translateY(-30px); }
+    5% { opacity: 1; -webkit-transform: translateY(0px);}
+    100% { opacity: 1; }
+}
+.am1 {
+  margin-top:-12px;
+}
+
+.animated-words .last {
+    -webkit-animation: animateWordLast 100s linear 1 18s;
+    animation: animateWordLast 100s linear 1 18s;
+}
+@-webkit-keyframes animateWordLast {
+    0% { opacity: 1; }
+    100% { opacity: 1; }
+}

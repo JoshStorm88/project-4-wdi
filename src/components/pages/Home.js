@@ -10,7 +10,20 @@ const Home = () => {
           </h1>
           <h2 className="subtitle">
             No Design experience? Its not the end of the world.
+            <div className="text-wrapper">We are&nbsp;
+              <div className="animated-words">
+                <span className="am1 nl">Creators</span>
+                <span className="am1 nl">Innovators</span>
+                <span className="am1 nl">Mind Changers</span>
+                <span className="am1 nl">Dragon slayers</span>
+                <span className="am1 nl">Dream weavers</span>
+                <span className="am1 nl">Heart breakers</span>
+              </div>
+            </div>
           </h2>
+
+
+
         </div>
       </div>
     </section>
