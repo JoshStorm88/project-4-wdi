@@ -6,13 +6,13 @@ import Home from './components/pages/Home';
 // import NotFound from './components/pages/NotFound';
 import DevelopersIndex from './components/developers/Index';
 import DevelopersShow from './components/developers/Show';
-import DevelopersNew from './components/developers/New';
-import DevelopersEdit from './components/developers/Edit';
+// import DevelopersNew from './components/developers/New';
+// import DevelopersEdit from './components/developers/Edit';
 import ProjectsNew from './components/projects/New';
 import AuthRegister from './components/auth/Register';
 import AuthLogin from './components/auth/Login';
 import Navbar from './components/common/Navbar';
-import ProtectedRoute from './components/common/ProtectedRoute';
+// import ProtectedRoute from './components/common/ProtectedRoute';
 import FlashMessages from './components/common/FlashMessages';
 
 import 'bulma';
@@ -30,8 +30,8 @@ class App extends React.Component {
           <section className="section">
             <div className="container">
               <Switch>
-                <ProtectedRoute path="/developers/new" component={DevelopersNew} />
-                <ProtectedRoute path="/developers/:id/edit" component={DevelopersEdit} />
+                {/* <ProtectedRoute path="/developers/new" component={DevelopersNew} /> */}
+                {/* <ProtectedRoute path="/developers/:id/edit" component={DevelopersEdit} /> */}
                 <Route path="/developers/:id" component={DevelopersShow} />
                 <Route path="/developers" component={DevelopersIndex} />
                 <Route path="/register" component={AuthRegister} />
