@@ -3,7 +3,6 @@ const developers = require('../controllers/developers');
 const auth = require('../controllers/auth');
 const secureRoute = require('../lib/secureroute');
 
-
 router.route('/developers')
   .get(developers.index)
   .post(secureRoute, developers.create);
