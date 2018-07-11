@@ -32,6 +32,7 @@ class Navbar extends React.Component {
           </a>
         </div>
 
+
         <div className={`navbar-menu${this.state.navbarOpen ? ' is-active' : ''}`}>
           <div className="navbar-end">
             <Link to="/login" className="navbar-item">Login</Link>
@@ -39,8 +40,6 @@ class Navbar extends React.Component {
             <Link to="/projects/new" className="navbar-item">New Project</Link>
             <Link to="/developers/index" className="navbar-item">All Developers</Link>
             <Link to="/developers/new" className="navbar-item">Create Developer Profile</Link>
-
-
           </div>
         </div>
       </nav>

@@ -19,6 +19,7 @@ const Home = () => {
                 <span className="am1 nl">Dream weavers</span>
                 <span className="am1 nl">Heart breakers</span>
               </div>
+              <div className="animateWordLast"></div>
             </div>
           </h2>
 
