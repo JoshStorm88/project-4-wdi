@@ -28,7 +28,7 @@ class Navbar extends React.Component {
       <nav className="navbar" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
           <Link to="/" className="navbar-item">
-            <img src="https://i.imgur.com/M0fInVz.png"
+            <img className="logo" src="https://i.imgur.com/M0fInVz.png"
               alt="Four Horsemen Development Platform" />
           </Link>
 

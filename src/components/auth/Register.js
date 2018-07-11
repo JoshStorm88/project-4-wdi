@@ -47,7 +47,14 @@ class AuthRegister extends React.Component {
           <input className="input" type="password" name="passwordConfirmation" placeholder="Password Confirmation" onChange={this.handleChange} />
         </div>
         <button className="button">Submit</button>
+        <button className="button">Cancel</button>
+
+        <img className="registerLogo" src="https://i.imgur.com/M0fInVz.png"
+          alt="Four Horsemen Development Platform" />
+
       </form>
+
+
     );
   }
 }

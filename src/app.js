@@ -23,8 +23,8 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <main>
-          <Navbar />
           <FlashMessages/>
+          <Navbar />
           <Route exact path="/" component={Home} />
           <section className="section">
             <div className="container">

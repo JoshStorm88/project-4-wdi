@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import _ from 'lodash';
+// import _ from 'lodash';
 
 class DevelopersIndex extends React.Component {
 
