@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const developers = require('../controllers/developers');
+const projects = require('../controllers/projects');
 const auth = require('../controllers/auth');
 const secureRoute = require('../lib/secureroute');
 
@@ -11,6 +12,14 @@ router.route('/developers/:id')
   .get(developers.show)
   .put(secureRoute, developers.update)
   .delete(secureRoute, developers.delete);
+
+router.route('/projects')
+  .post(projects.create);
+
+router.route('/projects/:id')
+  .get(projects.show)
+  .put(projects.update)
+  .delete(projects.delete);
 
 router.post('/register/', auth.register);
 router.post('/login/', auth.login);
