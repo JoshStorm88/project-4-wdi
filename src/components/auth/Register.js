@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import Auth from '../../lib/Auth';
 
 class AuthRegister extends React.Component {
 
@@ -11,7 +12,12 @@ class AuthRegister extends React.Component {
       url: '/api/register',
       method: 'POST',
       data: this.state
-    });
+    })
+      .then(res => {
+        Auth.setToken(res.data.Token);
+
+        this.props.history.push('/criminals');
+      });
 
   }
 
