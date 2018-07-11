@@ -1,13 +1,15 @@
 import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import _ from 'lodash';
 
 class DevelopersIndex extends React.Component {
 
   constructor() {
     super();
     this.state = {
-      developers: []
+      developers: [],
+      sort: 'name|asc'
     };
   }
 
@@ -20,7 +22,7 @@ class DevelopersIndex extends React.Component {
   }
 
   render() {
-    return(
+    return (
       <div className="columns is-multiline">
         {this.state.developers.map(developer =>
           <div key={developer._id} className="column is-one-third-desktop is-half-tablet">
@@ -30,8 +32,9 @@ class DevelopersIndex extends React.Component {
                   <figure className="image is-square">
                     <img src={developer.image} />
                   </figure>
-                  <div className="card-content">
-                    <div className="content" />
+                </div>
+                <div className="card-content">
+                  <div className="content">
                     <h2 className="title">{developer.companyName}</h2>
                   </div>
                 </div>
