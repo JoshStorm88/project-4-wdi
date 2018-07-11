@@ -9,12 +9,16 @@ class ProjectsNew extends React.Component {
         <div className="column">
           <form>
             <div className="field">
-              <label className="projectName">Name of Project</label>
-              <input className="input" name="nameOfProject" placeholder="ProjectName" />
+              <label className="projectName">Project Name</label>
+              <input className="input" name="projectName" placeholder="Project Name" />
             </div>
             <div className="field">
-              <label className="description">Description</label>
-              <input className="input" name="description" placeholder="Description" />
+              <label className="projectType">Project Type</label>
+              <input className="input" name="projectType" placeholder="Project Type" />
+            </div>
+            <div className="field">
+              <label className="projectBrief">Project Brief</label>
+              <input className="input" name="projectBrief" placeholder="Project Brief" />
             </div>
             <div className="field">
               <label className="skillsRequired">Skills Required</label>
