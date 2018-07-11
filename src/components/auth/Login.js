@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Auth from '../../lib/Auth';
+import Flash from '../../lib/Flash';
 
 class AuthLogin extends React.Component {
 
@@ -19,28 +20,30 @@ class AuthLogin extends React.Component {
         this.props.history.push('/developers');
       })
       .catch(() => {
+        Flash.setMessage('warning', 'Invalid Credentials');
         this.props.history.replace('/login');
+
       });
   }
+
   handleChange = ({ target: { name, value}}) => {
     this.setState({ [name]: value });
-  };
+  }
+
 
   render() {
-    return(
-      <form onSubmit={this.handleSubmit}>
+    return (
+      <form onSubmit={this.handleSubmit} autoComplete="off">
         <div className="field">
           <label className="email">Email</label>
-          <input className="input" name="email" placeholder="example@email.com" onChange={this.handleChange}/>
+          <input className="input" name="email" placeholder="Email" onChange={this.handleChange} />
         </div>
         <div className="field">
           <label className="password">Password</label>
-          <input className="input" type="password" name="password" placeholder="Password" required onChange={this.handleChange}/>
+          <input className="input" type="password" name="password" placeholder="Password" onChange={this.handleChange} />
         </div>
-        <div>
-          <button className="button">Log In</button>
-          <button className="button"><a href="/">Cancel</a></button>
-        </div>
+
+        <button className="button">Submit</button>
       </form>
     );
   }
