@@ -4,11 +4,17 @@
   font-family: 'Poiret One', cursive;
 }
 
+a {
+  color: inherit;
+}
+
 div.hero-body {
   background-image: url("https://i.imgur.com/M0fInVz.png");
   background-position:right;
   background-repeat: no-repeat;
   background-size: contain;
+}
 
-
+.button {
+  font-family: 'Poiret One', cursive;
 }
