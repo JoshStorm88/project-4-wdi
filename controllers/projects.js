@@ -12,7 +12,15 @@ function showRoute(req, res, next) {
     .catch(next);
 }
 
+function deleteRoute(req, res, next) {
+  Project.findById(req.params.id)
+    .then(project => project.remove())
+    .then(() => res.sendStatus(204))
+    .catch(next);
+}
+
 module.exports = {
   create: createRoute,
-  show: showRoute
+  show: showRoute,
+  delete: deleteRoute
 };
