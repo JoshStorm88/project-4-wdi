@@ -7,7 +7,7 @@ import { MemoryRouter } from 'react-router-dom';
 import sinon from 'sinon';
 import axios from 'axios';
 import Promise from 'bluebird';
-// import _ from 'lodash';
+import _ from 'lodash';
 
 import DevelopersIndex from '../../../src/components/developers/Index';
 
@@ -70,6 +70,7 @@ describe('DevelopersIndex tests', () => {
     sinon.stub(axios, 'get').returns(promise);
     done();
   });
+
   after(done => {
     axios.get.restore();
     done();
@@ -87,42 +88,56 @@ describe('DevelopersIndex tests', () => {
   it('should render developers', done => {
     promise.then(() => {
       wrapper.update();
-      expect(wrapper.find('div.card').length).to.eq(6);
+      expect(wrapper.find('div.card').length).to.eq(3);
       done();
     })
       .catch(done);
   });
 
-  // it('should render the correct data', done => {
-  //   promise.then(() => {
-  //     wrapper.update();
-  //     _.orderBy(data, 'companyName', 'asc').forEach((developer, index) => {
-  //       expect(wrapper.find('img').at(index).prop('src')).to.eq(developer.image);
-  //       expect(wrapper.find('h2').at(index).text()).to.eq(developer.companyName);
-  //       expect(wrapper.find('Link').at(index).prop('to')).to.eq(`/developers/${developer._id}`);
-  //     });
-  //     done();
-  //   });
-  // });
+  it('should render the correct data', done => {
+    promise.then(() => {
+      wrapper.update();
+      _.orderBy(data, 'name', 'asc').forEach((developer, index) => {
+        expect(wrapper.find('img').at(index).prop('src')).to.eq(developer.image);
+        expect(wrapper.find('h2').at(index).text()).to.eq(developer.companyName);
+        expect(wrapper.find('Link').at(index).prop('to')).to.eq(`/developers/${developer._id}`);
+      });
+      done();
+    });
+  });
 
-  // it('should filter the developers', done => {
-  //   const input = wrapper.find('input');
-  //   promise.then(() => {
-  //     input.simulate('change', { target: { value: 'Marks & Spencer Ltd'} });
-  //     wrapper.update();
-  //     expect(wrapper.find('div.card').length).to.eq(1);
-  //     done();
-  //
-  //     input.simulate('change', { target: { value: 'Achilleus Designs'} });
-  //     wrapper.update();
-  //     expect(wrapper.find('div.card').length).to.eq(2);
-  //     done();
-  //
-  //     input.simulate('change', { target: { value: 'garbage'} });
-  //     wrapper.update();
-  //     expect(wrapper.find('div.card').length).to.eq(0);
-  //     done();
-  // //   });
-  // });
+  it('should re-order the developers when the sort dropdown is changed', done => {
+    const e = { target: { value: 'name|desc' } };
+    promise.then(() => {
+      wrapper.find('select').simulate('change', e);
+      wrapper.update();
 
+      _.orderBy(data, 'compaName', 'desc').forEach((developer, index) => {
+        expect(wrapper.find('img').at(index).prop('src')).to.eq(developer.image);
+        expect(wrapper.find('h2').at(index).text()).to.eq(developer.name);
+        expect(wrapper.find('Link').at(index).prop('to')).to.eq(`/developers/${developer._id}`);
+      });
+
+      done();
+    });
+  });
+
+  it('should filter the developers', done => {
+    const input = wrapper.find('input');
+    promise.then(() => {
+      input.simulate('change', { target: { value: 'Designs' } });
+      wrapper.update();
+      expect(wrapper.find('div.card').length).to.eq(1);
+
+      input.simulate('change', { target: { value: 'Code' } });
+      wrapper.update();
+      expect(wrapper.find('div.card').length).to.eq(2);
+
+      input.simulate('change', { target: { value: 'garbage' } });
+      wrapper.update();
+      expect(wrapper.find('div.card').length).to.eq(0);
+
+      done();
+    });
+  });
 });

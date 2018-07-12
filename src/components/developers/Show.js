@@ -36,7 +36,7 @@ class DevelopersShow extends React.Component {
           </figure>
         </div>
         <div className="column is-half">
-          <h2 className="title">Company Name: {this.state.developer.companyName}</h2>
+          <h1 className="title">Company Name: {this.state.developer.companyName}</h1>
           <hr />
 
           <h3 className="title">Company Size: {this.state.developer.companySize}</h3>
