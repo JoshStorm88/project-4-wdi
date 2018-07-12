@@ -1,37 +1,47 @@
 import React from 'react';
-// import axios from 'axios';
-// import Auth from '../../lib/Auth';
+import axios from 'axios';
+import Auth from '../../lib/Auth';
 
 class ProjectsNew extends React.Component {
 
-  state = {};
+  // constructor(props) {
+  //   super(props);
+  //   this.project = this.project.bind(this);
+  // }
 
-  // componentDidMount() {
-  //   axios({
-  //     url: '/api/projects/new',
-  //     method: 'GET'
-  //   })
-  //     .then(res => {
-  //       const options = res.data.map(project => {
-  //         return { value: project._id, label: project.name };
-  //       });
-  //
-  //       this.setState({ options });
-  //     });
-  //
-  // }
-  //
-  // handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   axios({
-  //     url: '/api/developers',
-  //     method: 'POST',
-  //     data: this.state,
-  //     headers: { Authorization: `Bearer ${Auth.getToken()}` }
-  //   })
-  //     .then(() => this.props.history.push('/developers'))
-  //     .catch(err => this.setState({ errors: err.response.data.errors}));
-  // }
+  state = {
+    errors: {}
+  };
+
+  componentDidMount() {
+    axios({
+      url: '/api/developers',
+      method: 'GET'
+    })
+      .then(res => {
+        const options = res.data.map(project => {
+          return { value: project._id, label: project.name };
+        });
+
+        this.setState({ options });
+      });
+  }
+
+  handleChange = ({ target: { name, value }}) => {
+    this.setState({ [name]: value });
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    axios({
+      url: '/api/developers',
+      method: 'POST',
+      data: this.state,
+      headers: { Authorization: `Bearer ${Auth.getToken()}` }
+    })
+      .then(project => this.props.history.push(`/projects/${project._id}`))
+      .catch(err => this.setState({ errors: err.response.data.errors}));
+  }
 
   render() {
     return (
