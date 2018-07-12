@@ -59,19 +59,19 @@ mongoose.connect(dbURI, (err, db) => {
     .then(() => User.create([{
       username: 'A',
       email: 'jn@test.com',
-      passsword: '1234'
+      password: '1234'
     },{
       username: 'B',
       email: 'js@test.com',
-      passsword: '1234'
+      password: '1234'
     },{
       username: 'C',
       email: 'mg@test.com',
-      passsword: '1234'
+      password: '1234'
     },{
       username: 'D',
       email: 'gm@test.com',
-      passsword: '1234'
+      password: '1234'
     }]))
     .then(users => console.log(`${users.length} user(s) created`))
     .catch(err => console.log(err))
