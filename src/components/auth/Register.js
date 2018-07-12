@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Auth from '../../lib/Auth';
+import Flash from '../../lib/Flash';
 
 class AuthRegister extends React.Component {
 
@@ -17,6 +18,11 @@ class AuthRegister extends React.Component {
         Auth.setToken(res.data.token);
 
         this.props.history.push('/developers');
+      })
+      .catch(() => {
+        Flash.setMessage('warning', 'Whoops! Please check all the fields are filled in correctly..' );
+        this.props.history.replace('/register');
+
       });
   }
 
