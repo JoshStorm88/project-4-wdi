@@ -4,10 +4,10 @@ import Auth from '../../lib/Auth';
 
 class ProjectsNew extends React.Component {
 
-  // constructor(props) {
-  //   super(props);
-  //   this.project = this.project.bind(this);
-  // }
+  constructor(props) {
+    super(props);
+
+  }
 
   state = {
     errors: {}
@@ -39,8 +39,11 @@ class ProjectsNew extends React.Component {
       data: this.state,
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
-      .then(project => this.props.history.push(`/projects/${project._id}`))
-      .catch(err => this.setState({ errors: err.response.data.errors}));
+      .then(project => console.log(project._id));
+    // this.props.history.push(`/projects/${project._id}`));
+
+
+    // .catch(err => this.setState({ errors: err.response.data.errors}));
   }
 
   render() {
@@ -50,19 +53,19 @@ class ProjectsNew extends React.Component {
           <form onSubmit={this.handleSubmit}>
             <div className="field">
               <label className="projectName">Project Name</label>
-              <input className="input" name="projectName" placeholder="Project Name" onChange={this.handleChange}/>
+              <input className="input" name="projectName" placeholder="Project Name"/>
             </div>
             <div className="field">
               <label className="projectType">Project Type</label>
-              <input className="input" name="projectType" placeholder="Project Type" onChange={this.handleChange} />
+              <input className="input" name="projectType" placeholder="Project Type" />
             </div>
             <div className="field">
               <label className="projectBrief">Project Brief</label>
-              <input className="input" name="projectBrief" placeholder="Project Brief" onChange={this.handleChange} />
+              <input className="input" name="projectBrief" placeholder="Project Brief" />
             </div>
             <div className="field">
               <label className="skillsRequired">Skills Required</label>
-              <input className="input" name="skillsRequired" placeholder="Skills Required" onChange={this.handleChange}/>
+              <input className="input" name="skillsRequired" placeholder="Skills Required"/>
             </div>
             <button className="button">Submit</button>
           </form>

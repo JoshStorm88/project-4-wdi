@@ -21,7 +21,7 @@ class ProjectsShow extends React.Component {
       method: 'DELETE',
       headers: { Authorization: `Bearer ${Auth.getToken()}`}
     })
-      .then(() => this.props.history.push('/developers'));
+      .then(() => this.props.history.push('/'));
   }
 
   render() {
@@ -36,10 +36,10 @@ class ProjectsShow extends React.Component {
           <h3 className="title">Project Type: {this.state.project.projectSize}</h3>
           <hr />
 
-          <p className="content">Project Brief: {this.state.project.projectBrief}</p>
+          <h3 className="title">Skills Required: {this.state.project.skillsRequired}</h3>
           <hr />
 
-          <h3 className="title">Skills Required: {this.state.project.skillsRequired}</h3>
+          <p className="content">Project Brief: {this.state.project.projectBrief}</p>
         </div>
       </div>
     );
