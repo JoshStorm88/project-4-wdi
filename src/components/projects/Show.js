@@ -27,7 +27,7 @@ class ProjectsShow extends React.Component {
   render() {
     return (
       <div className="columns">
-        <div className="column is-half">
+        <div className="column">
           <h2 className="title">Project Name: {this.state.projectName}</h2>
           <hr />
 
@@ -39,10 +39,6 @@ class ProjectsShow extends React.Component {
           <hr />
 
           <h3 className="title">Skills Required: {this.state.skillsRequired}</h3>
-
-          <hr />
-
-          <p className="content">Project Brief: {this.state.projectBrief}</p>
         </div>
       </div>
     );
