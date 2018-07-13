@@ -35,7 +35,7 @@ class ProjectsShow extends React.Component {
           <h3 className="title">Project Type: {this.state.projectSize}</h3>
           <hr />
 
-          <p className="content">Project Brief: {this.state.projectBrief}</p>
+          <h3 className="content">Project Brief: {this.state.projectBrief}</h3>
 
           <hr />
 
