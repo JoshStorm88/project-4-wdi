@@ -34,16 +34,13 @@ class ProjectsNew extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     axios({
-      url: '/api/developers',
+      url: '/api/projects',
       method: 'POST',
       data: this.state,
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
-      .then(project => console.log(project._id));
-    // this.props.history.push(`/projects/${project._id}`));
-
-
-    // .catch(err => this.setState({ errors: err.response.data.errors}));
+      .then(project => this.props.history.push(`/projects/${project._id}`))
+      .catch(err => this.setState({ errors: err.response.data.errors}));
   }
 
   render() {
