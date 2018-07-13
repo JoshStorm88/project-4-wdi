@@ -7,7 +7,11 @@
 }
 
 a.navbar-item {
-  color: lightblue;
+  color: #6b969d;
+  &:hover {
+  text-decoration: underline;
+  background-color: black;
+}
 }
 
 div.navbar-menu.is-active {
