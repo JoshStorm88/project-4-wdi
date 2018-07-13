@@ -43,7 +43,7 @@ class ProjectsShow extends React.Component {
           <h3 className="title">Skills Required: {this.state.skillsRequired}</h3>
 
           <hr />
-          <Link className="button" to={`/projects/${this.state.project._id}/edit`}>Edit</Link>
+          {/* <Link className="button" to={`/projects/${this.state.project._id}/edit`}>Edit</Link> */}
           <button className="button is-danger" onClick={this.handleDelete}>Delete</button>
         </div>
       </div>
