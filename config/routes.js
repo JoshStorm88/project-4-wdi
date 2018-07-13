@@ -18,6 +18,7 @@ router.route('/projects')
 
 router.route('/projects/:id')
   .get(projects.show)
+  .put(projects.update)
   .delete(projects.delete);
 
 router.post('/register/', auth.register);

@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import Auth from '../../lib/Auth';
 
 class ProjectsShow extends React.Component {
@@ -40,6 +41,10 @@ class ProjectsShow extends React.Component {
           <hr />
 
           <h3 className="title">Skills Required: {this.state.skillsRequired}</h3>
+
+          <hr />
+          <Link className="button" to={`/projects/${this.state.project._id}/edit`}>Edit</Link>
+          <button className="button is-danger" onClick={this.handleDelete}>Delete</button>
         </div>
       </div>
     );
