@@ -2,8 +2,15 @@
 .navbar {
   position: fixed;
   background-color: black;
+  opacity: 0.9
+
 }
 
 a.navbar-item {
-  color: white;
+  color: lightblue;
+}
+
+div.navbar-menu.is-active {
+  background-color: black;
+  margin: 50px;
 }

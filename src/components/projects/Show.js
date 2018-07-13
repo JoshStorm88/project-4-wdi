@@ -6,6 +6,7 @@ class ProjectsShow extends React.Component {
 
   constructor() {
     super();
+    console.log('we go to jujus');
     this.state = {};
   }
 
