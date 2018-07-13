@@ -41,9 +41,11 @@ class ProjectsNew extends React.Component {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
 
-      .then(project => this.props.history.push(`/projects/${project.data._id}`))
-      .catch(err => this.setState({ errors: err.response.data.errors}))
-      .then(project => console.log(project._id));
+      .then(project => {
+        console.log(project.data);
+        this.props.history.push(`/projects/${project.data._id}`);
+      })
+      .catch(err => this.setState({ errors: err.response.data.errors}));
     // this.props.history.push(`/projects/${project._id}`));
 
 

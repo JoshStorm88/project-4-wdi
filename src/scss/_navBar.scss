@@ -2,8 +2,19 @@
 .navbar {
   position: fixed;
   background-color: black;
+  opacity: 0.9
+
 }
 
 a.navbar-item {
-  color: white;
+  color: #6b969d;
+  &:hover {
+  text-decoration: underline;
+  background-color: black;
+}
+}
+
+div.navbar-menu.is-active {
+  background-color: black;
+  margin: 50px;
 }
