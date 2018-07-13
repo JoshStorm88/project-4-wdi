@@ -25,25 +25,24 @@ class ProjectsShow extends React.Component {
   }
 
   render() {
-    if(this.state.error) return <h2 className="title is-2">{this.state.error}</h2>;
-    if(!this.state.project) return <h2 className="title is-2">Loading...</h2>;
     return (
       <div className="columns">
         <div className="column is-half">
-          <h2 className="title">Project Name: {this.state.project._id.projectName}</h2>
+          <h2 className="title">Project Name: {this.state.projectName}</h2>
           <hr />
 
-          <h3 className="title">Project Type: {this.state.project.data.projectSize}</h3>
+          <h3 className="title">Project Type: {this.state.projectSize}</h3>
           <hr />
 
-          <p className="content">Project Brief: {this.state.project.data.projectBrief}</p>
-          <hr />
-
-          <h3 className="title">Skills Required: {this.state.project.data.skillsRequired}</h3>
+          <p className="content">Project Brief: {this.state.projectBrief}</p>
 
           <hr />
 
-          <p className="content">Project Brief: {this.state.project.projectBrief}</p>
+          <h3 className="title">Skills Required: {this.state.skillsRequired}</h3>
+
+          <hr />
+
+          <p className="content">Project Brief: {this.state.projectBrief}</p>
         </div>
       </div>
     );
