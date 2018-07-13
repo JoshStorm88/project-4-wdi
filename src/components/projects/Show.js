@@ -30,13 +30,17 @@ class ProjectsShow extends React.Component {
     return (
       <div className="columns">
         <div className="column is-half">
-          <h2 className="title">Project Name: {this.state.project.projectName}</h2>
+          <h2 className="title">Project Name: {this.state.project._id.projectName}</h2>
           <hr />
 
-          <h3 className="title">Project Type: {this.state.project.projectSize}</h3>
+          <h3 className="title">Project Type: {this.state.project.data.projectSize}</h3>
           <hr />
 
-          <h3 className="title">Skills Required: {this.state.project.skillsRequired}</h3>
+          <p className="content">Project Brief: {this.state.project.data.projectBrief}</p>
+          <hr />
+
+          <h3 className="title">Skills Required: {this.state.project.data.skillsRequired}</h3>
+
           <hr />
 
           <p className="content">Project Brief: {this.state.project.projectBrief}</p>

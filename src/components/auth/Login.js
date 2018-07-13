@@ -20,7 +20,7 @@ class AuthLogin extends React.Component {
         this.props.history.push('/developers');
       })
       .catch(() => {
-        Flash.setMessage('warning', 'Invalid Credentials');
+        Flash.setMessage('danger', 'Whoops! Something wasn\'t entered correctly..');
         this.props.history.replace('/login');
 
       });

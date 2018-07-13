@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import Auth from '../../lib/Auth';
 
+
 class ProjectsNew extends React.Component {
 
   constructor(props) {
@@ -15,7 +16,7 @@ class ProjectsNew extends React.Component {
 
   componentDidMount() {
     axios({
-      url: '/api/developers',
+      url: '/api/projects',
       method: 'GET'
     })
       .then(res => {
@@ -28,19 +29,25 @@ class ProjectsNew extends React.Component {
   }
 
   handleChange = ({ target: { name, value }}) => {
-    this.setState({ [name]: value });
+    this.setState({ [name]: value }, ()=> console.log(this.state));
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
     axios({
-      url: '/api/projects',
+      url: '/api/projects/',
       method: 'POST',
       data: this.state,
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
-      .then(project => this.props.history.push(`/projects/${project._id}`))
-      .catch(err => this.setState({ errors: err.response.data.errors}));
+
+      .then(project => this.props.history.push(`/projects/${project.data._id}`))
+      .catch(err => this.setState({ errors: err.response.data.errors}))
+      .then(project => console.log(project._id));
+    // this.props.history.push(`/projects/${project._id}`));
+
+
+    // .catch(err => this.setState({ errors: err.response.data.errors}));
   }
 
   render() {

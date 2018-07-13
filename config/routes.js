@@ -13,7 +13,7 @@ router.route('/developers/:id')
   .put(secureRoute, developers.update)
   .delete(secureRoute, developers.delete);
 
-router.route('/projects/new')
+router.route('/projects')
   .post(projects.create);
 
 router.route('/projects/:id')
