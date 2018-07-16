@@ -17,15 +17,6 @@ class DevelopersShow extends React.Component {
       .catch(err => this.setState({ error: err.message }));
   }
 
-  handleDelete = () => {
-    axios({
-      url: `/api/developers/${this.props.match.params.id}`,
-      method: 'DELETE',
-      headers: { Authorization: `Bearer ${Auth.getToken()}`}
-    })
-      .then(() => this.props.history.push('/developers'));
-  }
-
   render() {
     if(this.state.error) return <h2 className="title is-2">{this.state.error}</h2>;
     if(!this.state.developer) return <h2 className="title is-2">Loading...</h2>;
@@ -55,8 +46,7 @@ class DevelopersShow extends React.Component {
 
           <hr />
 
-          <Link className="button" to={`/developers/${this.state.developer._id}/edit`}>Edit</Link>
-          <button className="button is-danger" onClick={this.handleDelete}>Delete</button>
+          <Link className="button" to={'/projects/new'}>Contact this developer about a project</Link>
         </div>
       </div>
     );
