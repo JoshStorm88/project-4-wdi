@@ -5,11 +5,14 @@ const Home = () => {
     <section className="hero is-large is-tablet is-mobile">
       <div className="hero-body">
         <div className="container">
+
           <h1 className="title homeTitle">
             Four Horsemen Development Platform
           </h1>
           <h2 className="subtitle homeSubtitle">
+
             No Design experience? Its not the end of the world.
+
             <div className="text-wrapper">We are&nbsp;
               <div className="animated-words">
                 <strong>
@@ -28,11 +31,9 @@ const Home = () => {
                 alt="Four Horsemen Development Platform" />
             </div>
           </h2>
-
-
-
         </div>
       </div>
+
     </section>
   );
 };

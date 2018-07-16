@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './components/pages/Home';
-// import About from './components/pages/About';
+import About from './components/pages/About';
 // import NotFound from './components/pages/NotFound';
 import DevelopersIndex from './components/developers/Index';
 import DevelopersShow from './components/developers/Show';
@@ -14,7 +14,6 @@ import ProjectsEdit from './components/projects/Edit';
 import AuthRegister from './components/auth/Register';
 import AuthLogin from './components/auth/Login';
 import Navbar from './components/common/Navbar';
-// import ProtectedRoute from './components/common/ProtectedRoute';
 import FlashMessages from './components/common/FlashMessages';
 
 import 'bulma';
@@ -38,7 +37,7 @@ class App extends React.Component {
                 <Route path="/developers" component={DevelopersIndex} />
                 <Route path="/register" component={AuthRegister} />
                 <Route path="/login" component={AuthLogin} />
-                {/* <Route exact path="/" component={About} /> */}
+                <Route exact path="/about" component={About} />
                 <Route path="/projects/new" component={ProjectsNew} />
                 <Route path="/projects/:id/edit" component={ProjectsEdit} />
                 <Route path="/projects/:id" component={ProjectsShow} />

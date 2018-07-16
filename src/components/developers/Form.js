@@ -41,7 +41,7 @@ const DevelopersForm = ({ handleChange, handleSubmit, data }) => {
 
 
 
-      <button className="button">Submit</button>
+      <button className="button is-primary">Submit</button>
     </form>
   );
 };
