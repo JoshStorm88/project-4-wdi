@@ -26,6 +26,7 @@ class DevelopersShow extends React.Component {
         <div className="column is-one-third">
           <figure className="image">
             <img src={this.state.developer.image} />
+
           </figure>
           < hr />
           <Link className="button is-primary" to={'/projects/new'}>Contact this developer about a project</Link>
@@ -38,7 +39,7 @@ class DevelopersShow extends React.Component {
           <h3 className="title">Company Size: {this.state.developer.companySize}</h3>
           <hr />
 
-          <h3 className="content">Description: {this.state.developer.description}</h3>
+          <h2 className="content"><h1>Description:</h1><p>{this.state.developer.description}</p></h2>
           <hr />
 
           <h3 className="title">Skills: {this.state.developer.skills}</h3>

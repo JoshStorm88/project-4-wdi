@@ -33,6 +33,7 @@ const Home = () => {
           </h2>
         </div>
       </div>
+
     </section>
   );
 };
