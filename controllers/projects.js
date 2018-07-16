@@ -15,7 +15,7 @@ function showRoute(req, res, next) {
 
 function submitRoute() {
   Emailer.sendMail({
-    to: 'jamesenewell91@gmail.com',
+    to: 'codeshoptest@gmail.com',
     subject: 'New Project',
     text: 'Hey, have a look at this awesome project'
   });
