@@ -1,4 +1,5 @@
 const Project = require('../models/project');
+const Emailer = require('../lib/Emailer');
 
 function createRoute(req, res, next) {
   Project.create(req.body)
@@ -10,6 +11,14 @@ function showRoute(req, res, next) {
   Project.findById(req.params.id)
     .then(project => res.json(project))
     .catch(next);
+}
+
+function submitRoute() {
+  Emailer.sendMail({
+    to: 'jamesenewell91@gmail.com',
+    subject: 'New Project',
+    text: 'Hey, have a look at this awesome project'
+  });
 }
 
 function updateRoute(req, res, next) {
@@ -30,6 +39,7 @@ function deleteRoute(req, res, next) {
 module.exports = {
   create: createRoute,
   show: showRoute,
+  submit: submitRoute,
   update: updateRoute,
   delete: deleteRoute
 };
