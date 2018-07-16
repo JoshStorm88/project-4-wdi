@@ -18,7 +18,7 @@ div.column {
   background: -webkit-linear-gradient(to right, #414345, #232526);
 }
 
-section.section  {
+section.section {
   background: #232526;
   background: -webkit-linear-gradient(to right, #414345, #232526);
   background: linear-gradient(to right, #414345, #232526);
@@ -27,7 +27,7 @@ section.section  {
 
 
 img:hover {
-  border:10px solid  black;
+  border:10px;
   box-shadow: 0 0 10px;
   opacity: 0.7;
   margin: inherit;
@@ -35,25 +35,33 @@ img:hover {
 }
 
 h1.title {
-  color: white;
+  color: black;
 }
 h2.title {
   color: black;
 }
 
 h2.subtitle {
-  color: white;
+  color: black;
 }
 
 div.h2.title {
-  color: white;
+  color: black;
 }
 
 h3.title {
-  color: white;
+  color: black;
 }
 
 p.content {
+  color: black;
+}
+
+h1.homeTitle {
+  color: white;
+}
+
+h2.homeSubtitle {
   color: white;
 }
 
