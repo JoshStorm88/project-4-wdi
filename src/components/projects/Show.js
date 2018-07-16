@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Auth from '../../lib/Auth';
+// import Mailto from 'react-mailto';
 
 class ProjectsShow extends React.Component {
 
@@ -26,6 +27,10 @@ class ProjectsShow extends React.Component {
       .then(() => this.props.history.push('/'));
   }
 
+  handleSubmit = () => {
+
+  }
+
   render() {
     return (
       <div className="columns">
@@ -43,8 +48,11 @@ class ProjectsShow extends React.Component {
           <h3 className="title">Skills Required: {this.state.project.skillsRequired}</h3>
 
           <hr />
-          {/* <Link className="button" to={`/projects/${this.state.project._id}/edit`}>Edit</Link> */}
           <button className="button is-danger" onClick={this.handleDelete}>Delete</button>
+          <button className="button is-primary" onClick={this.handleSubmit}>Confirm Project</button>
+          {/* <Mailto email="test@developer.com" obfuscate={true}>
+            Email me!
+          </Mailto> */}
         </div>}
       </div>
     );
