@@ -29,7 +29,7 @@ class App extends React.Component {
           <FlashMessages/>
           <Navbar />
           <Route exact path="/" component={Home} />
-          <section className="section">
+          <section className="section mainSection">
             <div className="container">
               <Switch>
                 {/* <ProtectedRoute path="/developers/new" component={DevelopersNew} /> */}
