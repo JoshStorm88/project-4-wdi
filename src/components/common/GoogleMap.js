@@ -1,20 +1,18 @@
 /* global google */
-
 import React from 'react';
 
 class GoogleMap extends React.Component {
 
   componentDidMount() {
-    const map = new google.maps.Map(this.mapCanvas, {
+    this.map = new google.maps.Map(this.mapCanvas, {
       center: this.props.location,
       zoom: 10
     });
 
     this.marker = new google.maps.Marker({
-      map,
+      map: this.map,
       position: this.props.location
     });
-
   }
 
   componentWillUnmount() {
@@ -25,7 +23,7 @@ class GoogleMap extends React.Component {
 
   render() {
     return (
-      <div className="google-map" ref={element => this.mapCanvas = element } />
+      <div className="google-map" ref={element => this.mapCanvas = element} />
     );
   }
 }

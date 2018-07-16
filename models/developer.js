@@ -9,7 +9,10 @@ const developerSchema = new mongoose.Schema({
   description: String,
   image: String,
   skills: String,
-  location: String,
+  location: {
+    lat: Number,
+    lng: Number
+  },
   telNumber: String,
   email: String
 });

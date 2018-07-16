@@ -5,10 +5,12 @@ const Home = () => {
     <section className="hero is-large is-tablet is-mobile">
       <div className="hero-body">
         <div className="container">
-          <h1 className="homeTitle">
+
+          <h1 className="title homeTitle">
             Four Horsemen Development Platform
           </h1>
-          <h2 className="homeSubtitle">
+          <h2 className="subtitle homeSubtitle">
+
             No Design experience? Its not the end of the world.
             <div className="text-wrapper">We are&nbsp;
               <div className="animated-words">

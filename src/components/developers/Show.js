@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Auth from '../../lib/Auth';
-import GoogleMap from '../common/Googlemaps';
+import GoogleMap from '../common/GoogleMap';
 
 class DevelopersShow extends React.Component {
 
@@ -51,7 +51,6 @@ class DevelopersShow extends React.Component {
           <h3 className="title">Telephone Number: {this.state.developer.telNumber}</h3>
           <h3 className="title">Email: {this.state.developer.email}</h3>
 
-          <h3 className="title">Location: {this.state.developer.location}</h3>
           <GoogleMap location={this.state.developer.location}/>
 
           <hr />
