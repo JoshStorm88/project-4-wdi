@@ -53,6 +53,7 @@ class DevelopersShow extends React.Component {
 
           <h3 className="title">Location: {this.state.developer.location}</h3>
           <GoogleMap location={this.state.developer.location}/>
+
           <hr />
 
           <Link className="button" to={`/developers/${this.state.developer._id}/edit`}>Edit</Link>
