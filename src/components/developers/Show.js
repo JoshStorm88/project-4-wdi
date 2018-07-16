@@ -22,12 +22,14 @@ class DevelopersShow extends React.Component {
     if(!this.state.developer) return <h2 className="title is-2">Loading...</h2>;
     return (
       <div className="columns">
-        <div className="column is-half">
+        <div className="column is-one-third">
           <figure className="image">
             <img src={this.state.developer.image} />
           </figure>
+          < hr />
+          <Link className="button" to={'/projects/new'}>Contact this developer about a project</Link>
         </div>
-        <div className="column is-half">
+        <div className="column is-two-thirds">
           <h1 className="title">Company Name: {this.state.developer.companyName}</h1>
           <hr />
 
@@ -38,15 +40,19 @@ class DevelopersShow extends React.Component {
           <hr />
 
           <h3 className="title">Skills: {this.state.developer.skills}</h3>
+          <hr />
 
           <h3 className="title">Telephone Number: {this.state.developer.telNumber}</h3>
+          <hr />
+          
           <h3 className="title">Email: {this.state.developer.email}</h3>
+          <hr />
 
           <GoogleMap location={this.state.developer.location}/>
 
           <hr />
 
-          <Link className="button" to={'/projects/new'}>Contact this developer about a project</Link>
+
         </div>
       </div>
     );
