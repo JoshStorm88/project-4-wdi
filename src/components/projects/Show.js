@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Auth from '../../lib/Auth';
-// import Mailto from 'react-mailto';
+
 
 class ProjectsShow extends React.Component {
 
@@ -27,7 +27,16 @@ class ProjectsShow extends React.Component {
       .then(() => this.props.history.push('/'));
   }
 
-  handleSubmit = () => {
+  handleSubmit = (e) => {
+    e.preventDefault();
+
+    axios({
+      url: `/api/projects/${this.props.match.params.id}`,
+      method: 'POST'
+    });
+
+
+
 
   }
 
@@ -48,11 +57,8 @@ class ProjectsShow extends React.Component {
           <h3 className="title">Skills Required: {this.state.project.skillsRequired}</h3>
 
           <hr />
-          <button className="button is-danger" onClick={this.handleDelete}>Delete</button>
-          <button className="button is-primary" onClick={this.handleSubmit}>Confirm Project</button>
-          {/* <Mailto email="test@developer.com" obfuscate={true}>
-            Email me!
-          </Mailto> */}
+          <button className="button is-danger" onClick={this.handleDelete}>Cancel Project</button>
+          <button className="button is-primary" onClick={this.handleSubmit}>Send Project</button>
         </div>}
       </div>
     );

@@ -19,6 +19,7 @@ router.route('/projects')
 router.route('/projects/:id')
   .get(projects.show)
   .put(projects.update)
+  .post(projects.submit)
   .delete(projects.delete);
 
 router.post('/register/', auth.register);
