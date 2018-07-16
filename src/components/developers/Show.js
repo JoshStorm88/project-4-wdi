@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import Auth from '../../lib/Auth';
+// import Auth from '../../lib/Auth';
 import GoogleMap from '../common/GoogleMap';
 
 class DevelopersShow extends React.Component {
@@ -21,12 +21,15 @@ class DevelopersShow extends React.Component {
     if(this.state.error) return <h2 className="title is-2">{this.state.error}</h2>;
     if(!this.state.developer) return <h2 className="title is-2">Loading...</h2>;
     return (
-      <div className="columns">
+      <div className="columns is-multilined">
         <div className="column is-half">
           <figure className="image">
             <img src={this.state.developer.image} />
           </figure>
+
+          <Link className="button is-primary" id="devButton" to={'/projects/new'}>Contact this developer about a project</Link>
         </div>
+
         <div className="column is-half">
           <h1 className="title">Company Name: {this.state.developer.companyName}</h1>
           <hr />
@@ -46,7 +49,6 @@ class DevelopersShow extends React.Component {
 
           <hr />
 
-          <Link className="button" to={'/projects/new'}>Contact this developer about a project</Link>
         </div>
       </div>
     );

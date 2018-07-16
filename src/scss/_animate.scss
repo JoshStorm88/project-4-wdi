@@ -2,6 +2,7 @@
 .text-wrapper {
     text-align: center;
     margin:15px 0;
+    color: white;
 }
 .animated-words {
     display: inline-block;
@@ -106,7 +107,7 @@ div.hero-body {
   padding-top: 120px;
   box-sizing: border-box;
   -webkit-animation: slide 20s linear infinite;
-  min-height: 800px;
+  min-height: 900px;
 }
 
 @-webkit-keyframes slide {

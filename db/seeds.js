@@ -69,7 +69,16 @@ mongoose.connect(dbURI, (err, db) => {
       location: {lat: 52.413154, lng: -1.919435},
       telNumber: '0208 328 8907',
       email: 'info@Mikeandnicweb.com'
-
+    },{
+      companyName: 'Castrid\'s Web Studio',
+      companySize: 'Small',
+      description: 'C',
+      image: 'https://dsocdn.akamaized.net/Assets/Images_Upload/2018/01/14/a71c295a-f962-11e7-9a05-1b44e7e70ea5_web_scale_0.4557291_0.4557291__.jpg?maxheight=416&maxwidth=568&scale=both',
+      skills: 'Bulma, Art, Ruby, Python, PHP, Javascript, React.js, Angular.js',
+      // location: 'Birmingham',
+      location: {lat: 52.413154, lng: -1.919435},
+      telNumber: '0208 328 8907',
+      email: 'info@castrid.com'
     }
     ]))
     .then(developers => console.log(`${developers.length} developer(s) created`))

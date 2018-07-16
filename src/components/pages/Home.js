@@ -12,6 +12,7 @@ const Home = () => {
           <h2 className="subtitle homeSubtitle">
 
             No Design experience? Its not the end of the world.
+
             <div className="text-wrapper">We are&nbsp;
               <div className="animated-words">
                 <strong>
@@ -30,9 +31,6 @@ const Home = () => {
                 alt="Four Horsemen Development Platform" />
             </div>
           </h2>
-
-
-
         </div>
       </div>
     </section>

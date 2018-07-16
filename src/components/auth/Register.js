@@ -35,7 +35,7 @@ class AuthRegister extends React.Component {
   handleCancel = (e) => {
     e.preventDefault();
     axios({
-      url: '/register',
+      url: '/api/register',
       data: this.state
     });
   }
@@ -60,6 +60,7 @@ class AuthRegister extends React.Component {
           <label className="password">Password Confirmation</label>
           <input className="input" type="password" name="passwordConfirmation" placeholder="Password Confirmation" onChange={this.handleChange} />
         </div>
+
         <button className="button">Submit</button>
         <button className="button" onChange={this.handleCancel}>Cancel</button>
 
@@ -67,8 +68,6 @@ class AuthRegister extends React.Component {
           alt="Four Horsemen Development Platform" />
 
       </form>
-
-
     );
   }
 }

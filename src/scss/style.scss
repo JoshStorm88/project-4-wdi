@@ -1,5 +1,7 @@
 @import 'animate';
 @import 'navBar';
+@import 'logo';
+@import 'google';
 
 * {
   font-family: 'Poiret One', cursive;
@@ -11,42 +13,40 @@ a {
   img:hover {
     opacity: 1.0;
     filter: alpha(opacity=100);
+  }
+
+  div.column {
+    background: -webkit-linear-gradient(to right, #414345, #232526);
+  }
+
+section {
+  background: black;
 }
 
 
-div.column {
-  background: -webkit-linear-gradient(to right, #414345, #232526);
-}
-
-section.section.mainSection {
-  background: #232526;
-  background: -webkit-linear-gradient(to right, #414345, #232526);
-  background: linear-gradient(to right, #414345, #232526);
-  min-height: 800px;
-}
-
-
-img:hover {
-  border:10px;
-  box-shadow: 0 0 10px;
-  opacity: 0.7;
-  margin: inherit;
+  img:hover {
+    border:10px;
+    box-shadow: 0 0 10px;
+    opacity: 0.7;
+    margin: inherit;
   }
 }
 
 h1.title {
   color: black;
+  &.homeTitle {
+    color: white;
+  }
 }
+
 h2.title {
   color: black;
+  &.subtitle {
+    color: black;
+  }
 }
-
-h2.subtitle {
-  color: black;
-}
-
-div.h2.title {
-  color: black;
+  .homeSubtitle {
+  color: white;
 }
 
 h3.title {
@@ -57,42 +57,11 @@ p.content {
   color: black;
 }
 
-h1.homeTitle {
-  color: white;
-}
-
-h2.homeSubtitle {
-  color: white;
-
-}
-
 .button {
   font-family: 'Poiret One', cursive;
-}
-
-.HomeLogo {
-  height: 400px;
-  width: 600px;
-}
-
-.loginLogo {
-  height: 460px;
-  width: 480px;
-}
-
-.registerLogo {
-  height: 380px;
-  width: 400px;
-}
-
-.button {
   margin-left: 5px;
 }
 
 .flashContainer {
   position: sticky;
-}
-
-.google-map {
-  height: 400px;
 }

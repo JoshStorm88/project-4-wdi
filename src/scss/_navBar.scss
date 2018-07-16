@@ -3,9 +3,7 @@
   position: fixed;
   background-color: black;
   opacity: 0.7;
-  border-radius: 50px;
-
-
+  border-radius: 10px;
 }
 
 a.navbar-item {
@@ -14,7 +12,7 @@ a.navbar-item {
   text-decoration: underline;
   background-color: black;
   }
-} 
+}
 
 div.navbar-menu.is-active {
   background-color: black;
