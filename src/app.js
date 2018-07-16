@@ -10,6 +10,7 @@ import DevelopersShow from './components/developers/Show';
 // import DevelopersEdit from './components/developers/Edit';
 import ProjectsNew from './components/projects/New';
 import ProjectsShow from './components/projects/Show';
+import ProjectsEdit from './components/projects/Edit';
 import AuthRegister from './components/auth/Register';
 import AuthLogin from './components/auth/Login';
 import Navbar from './components/common/Navbar';
@@ -38,8 +39,8 @@ class App extends React.Component {
                 <Route path="/register" component={AuthRegister} />
                 <Route path="/login" component={AuthLogin} />
                 {/* <Route exact path="/" component={About} /> */}
-
                 <Route path="/projects/new" component={ProjectsNew} />
+                <Route path="/projects/:id/edit" component={ProjectsEdit} />
                 <Route path="/projects/:id" component={ProjectsShow} />
               </Switch>
             </div>

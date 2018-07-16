@@ -12,6 +12,14 @@ function showRoute(req, res, next) {
     .catch(next);
 }
 
+function updateRoute(req, res, next) {
+  Project.findById(req.params.id)
+    .then(project => project.set(req.body))
+    .then(project => project.save())
+    .then(project => res.json(project))
+    .catch(next);
+}
+
 function deleteRoute(req, res, next) {
   Project.findById(req.params.id)
     .then(project => project.remove())
@@ -22,5 +30,6 @@ function deleteRoute(req, res, next) {
 module.exports = {
   create: createRoute,
   show: showRoute,
+  update: updateRoute,
   delete: deleteRoute
 };
