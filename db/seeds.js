@@ -15,7 +15,8 @@ mongoose.connect(dbURI, (err, db) => {
       description: 'C',
       image: 'https://pbs.twimg.com/profile_images/1706286797/M_Slogo_400x400.jpg',
       skills: 'Python, Ruby, Javascript',
-      location: 'Kingston Upon Thames',
+      // location: 'Kingston Upon Thames',
+      location: {},
       telNumber: '0203 442 1767',
       email: 'info@MandS.com'
     },{
@@ -24,7 +25,8 @@ mongoose.connect(dbURI, (err, db) => {
       description: 'C',
       image: 'https://s3-media2.fl.yelpcdn.com/bphoto/zcI5ktHMaO7GTMRQo02Zjg/l.jpg',
       skills: 'Bulma, Angular',
-      location: 'Manhatten',
+      // location: 'Manhatten',
+      location: {lat: 40.7484, lng: 73.9857},
       telNumber: '0208 112 2566',
       email: 'info@AD.com'
     },{
@@ -33,7 +35,8 @@ mongoose.connect(dbURI, (err, db) => {
       description: 'Unknown',
       image: 'https://pbs.twimg.com/profile_images/1132279153/MI6-col_neg_400x400.jpg',
       skills: 'Unknown',
-      location: 'Unknown',
+      // location: 'Unknown',
+      location: {lat: 51.4872 , lng: 0.1245},
       telNumber: 'Unknown',
       email: 'info@government'
     },{
@@ -42,7 +45,8 @@ mongoose.connect(dbURI, (err, db) => {
       description: 'C',
       image: 'https://pbs.twimg.com/profile_images/696378871126462464/c2DJbncv_400x400.png',
       skills: 'React.js, Sass, Node.js, Ruby on Rails',
-      location: 'London',
+      // location: 'London',
+      location: {lat: 51.528013, lng: -0.132117},
       telNumber: '0208 332 5566',
       email: 'info@Networkcode.com'
     },{
@@ -51,7 +55,8 @@ mongoose.connect(dbURI, (err, db) => {
       description: 'C',
       image: 'https://pbs.twimg.com/profile_images/896001072015314945/6xIWXrOx_400x400.jpg',
       skills: 'Witty Retorts, French Accents, Javascript, React.js, Normalize',
-      location: 'Paris',
+      // location: 'Paris',
+      location: {lat: 48.8584, lng: 2.2945},
       telNumber: '0208 117 1253',
       email: 'info@jandg.com'
     },{
@@ -60,7 +65,8 @@ mongoose.connect(dbURI, (err, db) => {
       description: 'C',
       image: 'https://pbs.twimg.com/profile_images/454345227587690496/PWMftTUJ_400x400.jpeg',
       skills: 'Bulma, Art, Ruby, Python, PHP, Javascript, React.js, Angular.js',
-      location: 'Birmingham',
+      // location: 'Birmingham',
+      location: {lat: 52.413154, lng: -1.919435},
       telNumber: '0208 328 8907',
       email: 'info@Mikeandnicweb.com'
 
