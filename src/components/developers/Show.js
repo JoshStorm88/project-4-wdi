@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Auth from '../../lib/Auth';
+import GoogleMap from '../common/Googlemaps';
 
 class DevelopersShow extends React.Component {
 
@@ -47,6 +48,7 @@ class DevelopersShow extends React.Component {
 
           <h3 className="title">Skills: {this.state.developer.skills}</h3>
           <h3 className="title">Location: {this.state.developer.location}</h3>
+          <GoogleMap location={this.state.developer.location}/>
           <hr />
 
           <Link className="button" to={`/developers/${this.state.developer._id}/edit`}>Edit</Link>
