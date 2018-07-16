@@ -35,26 +35,26 @@ img:hover {
 }
 
 h1.title {
-  color: white;
+  color: black;
 }
 h2.title {
   color: black;
 }
 
 h2.subtitle {
-  color: white;
+  color: black;
 }
 
 div.h2.title {
-  color: white;
+  color: black;
 }
 
 h3.title {
-  color: white;
+  color: black;
 }
 
 p.content {
-  color: white;
+  color: black;
 }
 
 .button {
@@ -86,4 +86,12 @@ p.content {
 
 .google-map {
   height: 400px;
+}
+
+h1.homeTitle {
+  color: white;
+}
+
+h2.homeSubtitle {
+  color: white;
 }
