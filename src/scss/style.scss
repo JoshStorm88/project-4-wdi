@@ -7,29 +7,33 @@
 
 a {
   color: inherit;
+  font-weight: bold;
   img:hover {
     opacity: 1.0;
     filter: alpha(opacity=100);
 }
-}
 
-div.hero-body {
-  background-image: url("https://i.imgur.com/M0fInVz.png");
-  background-position:right;
-  background-repeat: no-repeat;
-  background-size: contain;
-}
 
 div.column {
   background: -webkit-linear-gradient(to right, #414345, #232526);
 }
 
-section {
+section.section  {
   background: #232526;
   background: -webkit-linear-gradient(to right, #414345, #232526);
   background: linear-gradient(to right, #414345, #232526);
   min-height: 800px;
 }
+
+
+img:hover {
+  border:10px solid  black;
+  box-shadow: 0 0 10px;
+  opacity: 0.7;
+  margin: inherit;
+
+}
+
 
 h1.title {
   color: white;

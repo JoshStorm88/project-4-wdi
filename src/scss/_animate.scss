@@ -1,4 +1,4 @@
-
+//Rotating Words on Homepage//
 .text-wrapper {
     text-align: left;
     margin:15px 0;
@@ -80,7 +80,7 @@
     0% { opacity: 0; }
     2% { opacity: 0; -webkit-transform: translateY(-30px); }
     5% { opacity: 1; -webkit-transform: translateY(0px);}
-    100% { opacity: 1; }
+    100% { opacity: 1;}
 }
 .am1 {
   margin-top:-12px;
@@ -93,4 +93,23 @@
 @-webkit-keyframes animateWordLast {
     0% { opacity: 1; }
     100% { opacity: 1; }
+}
+
+//Homepage Background animation//
+
+div.hero-body {
+  background: url("https://www.toptal.com/designers/subtlepatterns/patterns/connectwork.png") repeat 0 0;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  height: 300px;
+  padding-top: 120px;
+  box-sizing: border-box;
+  -webkit-animation: slide 20s linear infinite;
+  min-height: 800px;
+}
+
+@-webkit-keyframes slide {
+    from { background-position: 0 0; }
+    to { background-position: -400px 0; }
 }
