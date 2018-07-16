@@ -4,12 +4,14 @@ const moment = require('moment');
 const developerSchema = new mongoose.Schema({
   // add more keys/values if we think of anything else that's needed
   companyName: String,
-  companySize: { type: String, enum: ['Small', 'Medium', 'Large', 'Unknown'] }, 
+  companySize: { type: String, enum: ['Small', 'Medium', 'Large', 'Unknown'] },
   founded: Date,
   description: String,
   image: String,
   skills: String,
-  location: String
+  location: String,
+  telNumber: String,
+  email: String
 });
 
 developerSchema.path('founded')

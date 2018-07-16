@@ -33,7 +33,7 @@ img:hover {
   margin: inherit;
 
 }
-
+}
 
 h1.title {
   color: white;
@@ -62,6 +62,11 @@ p.content {
   font-family: 'Poiret One', cursive;
 }
 
+.HomeLogo {
+  height: 400px;
+  width: 400px;
+}
+
 .loginLogo {
   height: 460px;
   width: 480px;
@@ -78,4 +83,8 @@ p.content {
 
 .flashContainer {
   position: sticky;
+}
+
+.google-map {
+  height: 100px;
 }

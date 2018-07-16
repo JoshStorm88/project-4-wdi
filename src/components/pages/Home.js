@@ -23,6 +23,10 @@ const Home = () => {
               </div>
               <div className="animateWordLast"></div>
             </div>
+            <div>
+              <img className="HomeLogo" src="https://i.imgur.com/M0fInVz.png"
+                alt="Four Horsemen Development Platform" />
+            </div>
           </h2>
 
 

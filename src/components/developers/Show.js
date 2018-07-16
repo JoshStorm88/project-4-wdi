@@ -46,6 +46,10 @@ class DevelopersShow extends React.Component {
           <hr />
 
           <h3 className="title">Skills: {this.state.developer.skills}</h3>
+
+          <h3 className="title">Telephone Number: {this.state.developer.telNumber}</h3>
+          <h3 className="title">Email: {this.state.developer.email}</h3>
+
           <h3 className="title">Location: {this.state.developer.location}</h3>
           <hr />
 
