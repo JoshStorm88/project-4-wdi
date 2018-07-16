@@ -2,9 +2,10 @@
 .navbar {
   position: fixed;
   background-color: black;
-  display: inline-flex;
   opacity: 0.7;
-  
+  border-radius: 50px;
+
+
 }
 
 a.navbar-item {
@@ -12,7 +13,7 @@ a.navbar-item {
   &:hover {
   text-decoration: underline;
   background-color: black;
-}
+  }
 }
 
 div.navbar-menu.is-active {

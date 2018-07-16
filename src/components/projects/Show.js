@@ -12,8 +12,9 @@ class ProjectsShow extends React.Component {
   }
 
   componentDidMount() {
+    console.log(this.props.match.params.id);
     axios.get(`/api/projects/${this.props.match.params.id}`)
-      .then(res => this.setState({ project: res.data }))
+      .then(res => this.setState({ project: res.data }, ()=> console.log(this.state)))
       .catch(err => this.setState({ error: err.message }));
   }
 
@@ -29,23 +30,23 @@ class ProjectsShow extends React.Component {
   render() {
     return (
       <div className="columns">
-        <div className="column">
-          <h2 className="title">Project Name: {this.state.projectName}</h2>
+        {this.state.project && <div className="column">
+          <h2 className="title">Project Name: {this.state.project.projectName}</h2>
           <hr />
 
-          <h3 className="title">Project Type: {this.state.projectSize}</h3>
+          <h3 className="title">Project Type: {this.state.project.projectSize}</h3>
           <hr />
 
-          <h3 className="content">Project Brief: {this.state.projectBrief}</h3>
+          <h3 className="content">Project Brief: {this.state.project.projectBrief}</h3>
 
           <hr />
 
-          <h3 className="title">Skills Required: {this.state.skillsRequired}</h3>
+          <h3 className="title">Skills Required: {this.state.project.skillsRequired}</h3>
 
           <hr />
           {/* <Link className="button" to={`/projects/${this.state.project._id}/edit`}>Edit</Link> */}
           <button className="button is-danger" onClick={this.handleDelete}>Delete</button>
-        </div>
+        </div>}
       </div>
     );
   }

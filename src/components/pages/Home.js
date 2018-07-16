@@ -2,7 +2,7 @@ import React from 'react';
 
 const Home = () => {
   return (
-    <section className="hero is-large">
+    <section className="hero is-large is-tablet is-mobile">
       <div className="hero-body">
         <div className="container">
           <h1 className="title">
@@ -24,7 +24,7 @@ const Home = () => {
               <div className="animateWordLast"></div>
             </div>
             <div>
-              <img className="HomeLogo" src="https://i.imgur.com/M0fInVz.png"
+              <img className="HomeLogo" src="https://i.imgur.com/tV2rzLl.png"
                 alt="Four Horsemen Development Platform" />
             </div>
           </h2>

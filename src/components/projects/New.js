@@ -14,19 +14,19 @@ class ProjectsNew extends React.Component {
     errors: {}
   };
 
-  componentDidMount() {
-    axios({
-      url: '/api/projects',
-      method: 'GET'
-    })
-      .then(res => {
-        const options = res.data.map(project => {
-          return { value: project._id, label: project.name };
-        });
-
-        this.setState({ options });
-      });
-  }
+  // componentDidMount() {
+  //   axios({
+  //     url: '/api/projects',
+  //     method: 'GET'
+  //   })
+  //     .then(res => {
+  //       const options = res.data.map(project => {
+  //         return { value: project._id, label: project.name };
+  //       });
+  //
+  //       this.setState({ options });
+  //     });
+  // }
 
   handleChange = ({ target: { name, value }}) => {
     this.setState({ [name]: value }, ()=> console.log(this.state));
@@ -59,19 +59,19 @@ class ProjectsNew extends React.Component {
           <form onSubmit={this.handleSubmit}>
             <div className="field">
               <label className="projectName">Project Name</label>
-              <input className="input" name="projectName" placeholder="Project Name"/>
+              <input className="input" name="projectName" placeholder="Project Name" onChange={this.handleChange}/>
             </div>
             <div className="field">
               <label className="projectType">Project Type</label>
-              <input className="input" name="projectType" placeholder="Project Type" />
+              <input className="input" name="projectType" placeholder="Project Type" onChange={this.handleChange}/>
             </div>
             <div className="field">
               <label className="projectBrief">Project Brief</label>
-              <input className="input" name="projectBrief" placeholder="Project Brief" />
+              <input className="input" name="projectBrief" placeholder="Project Brief" onChange={this.handleChange}/>
             </div>
             <div className="field">
               <label className="skillsRequired">Skills Required</label>
-              <input className="input" name="skillsRequired" placeholder="Skills Required"/>
+              <input className="input" name="skillsRequired" placeholder="Skills Required" onChange={this.handleChange}/>
             </div>
             <button className="button">Submit</button>
           </form>
