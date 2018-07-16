@@ -51,7 +51,6 @@ class DevelopersShow extends React.Component {
           <h3 className="title">Telephone Number: {this.state.developer.telNumber}</h3>
           <h3 className="title">Email: {this.state.developer.email}</h3>
 
-          <h3 className="title">Location: {this.state.developer.location}</h3>
           <GoogleMap location={this.state.developer.location}/>
 
           <hr />

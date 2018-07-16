@@ -16,7 +16,7 @@ mongoose.connect(dbURI, (err, db) => {
       image: 'https://pbs.twimg.com/profile_images/1706286797/M_Slogo_400x400.jpg',
       skills: 'Python, Ruby, Javascript',
       // location: 'Kingston Upon Thames',
-      location: {},
+      location: { lat: 51.412229, lng: -0.300556},
       telNumber: '0203 442 1767',
       email: 'info@MandS.com'
     },{
@@ -26,7 +26,7 @@ mongoose.connect(dbURI, (err, db) => {
       image: 'https://s3-media2.fl.yelpcdn.com/bphoto/zcI5ktHMaO7GTMRQo02Zjg/l.jpg',
       skills: 'Bulma, Angular',
       // location: 'Manhatten',
-      location: {lat: 40.7484, lng: 73.9857},
+      location: {lat: 40.7484, lng: -73.9857},
       telNumber: '0208 112 2566',
       email: 'info@AD.com'
     },{
