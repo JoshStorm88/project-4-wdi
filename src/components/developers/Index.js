@@ -68,9 +68,9 @@ class DevelopersIndex extends React.Component {
               <Link to={`/developers/${developer._id}`}>
                 <div className="card">
                   <div className="card-image">
-                    <figure className="image is-square">
-                      <img src={developer.image} />
-                    </figure>
+
+                    <img className="devImage" src={developer.image} />
+
                   </div>
                   <div className="card-content">
                     <div className="content">

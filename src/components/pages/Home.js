@@ -1,5 +1,6 @@
 import React from 'react';
 import SimpleSlider from '../images/Slider';
+import Footer from '../common/Footer';
 
 const Home = () => {
   return (
@@ -29,14 +30,18 @@ const Home = () => {
             <div className="animateWordLast"></div>
           </div>
           <div>
+            <hr />
             {/* <img className="HomeLogo" src="https://i.imgur.com/tV2rzLl.png"
               alt="Four Horsemen Development Platform" /> */}
             <SimpleSlider/>
+            <hr />
+            <p className="clickMe"> Click the left of right buttons to check out some of this weeks featured work.. </p>
+
           </div>
+          <Footer />
         </h2>
       </div>
     </div>
-
 
   );
 };

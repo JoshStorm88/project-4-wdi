@@ -26,7 +26,7 @@ class DevelopersShow extends React.Component {
       <div className="columns">
         <div className="column is-one-third">
           <figure className="image is-square">
-            <img src={this.state.developer.image} />
+            <img className="devImage" src={this.state.developer.image} />
 
           </figure>
           < hr />
