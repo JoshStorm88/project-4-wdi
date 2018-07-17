@@ -40,7 +40,7 @@ class DevelopersShow extends React.Component {
           <h3 className="title">Company Size: {this.state.developer.companySize}</h3>
           <hr />
 
-          <h2 className="title"><h1>Description:</h1><p>{this.state.developer.description}</p></h2>
+          <h1 className="title">Description:<p>{this.state.developer.description}</p></h1>
           <hr />
 
           <h3 className="title">Skills: {this.state.developer.skills}</h3>
