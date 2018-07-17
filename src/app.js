@@ -43,7 +43,6 @@ class App extends React.Component {
               <Route path="/projects/:id" component={ProjectsShow} />
             </Switch>
           </div>
-
         </main>
       </BrowserRouter>
     );

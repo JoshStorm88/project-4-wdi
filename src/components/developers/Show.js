@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 // import Auth from '../../lib/Auth';
 import GoogleMap from '../common/GoogleMap';
 
+
 class DevelopersShow extends React.Component {
 
   constructor() {

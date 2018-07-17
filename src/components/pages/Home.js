@@ -1,4 +1,5 @@
 import React from 'react';
+import SimpleSlider from '../images/Slider';
 
 const Home = () => {
   return (
@@ -28,12 +29,14 @@ const Home = () => {
             <div className="animateWordLast"></div>
           </div>
           <div>
-            <img className="HomeLogo" src="https://i.imgur.com/tV2rzLl.png"
-              alt="Four Horsemen Development Platform" />
+            {/* <img className="HomeLogo" src="https://i.imgur.com/tV2rzLl.png"
+              alt="Four Horsemen Development Platform" /> */}
+            <SimpleSlider/>
           </div>
         </h2>
       </div>
     </div>
+
 
   );
 };
