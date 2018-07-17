@@ -139,7 +139,7 @@ describe('DevelopersIndex tests', () => {
   it('should render developers', done => {
     promise.then(() => {
       wrapper.update();
-      expect(wrapper.find('div.card').length).to.eq(3);
+      expect(wrapper.find('div.card').length).to.eq(9);
       done();
     })
       .catch(done);
@@ -148,7 +148,7 @@ describe('DevelopersIndex tests', () => {
   it('should render the correct data', done => {
     promise.then(() => {
       wrapper.update();
-      _.orderBy(data, 'name', 'asc').forEach((developer, index) => {
+      _.orderBy(data, 'companyName', 'asc').forEach((developer, index) => {
         expect(wrapper.find('img').at(index).prop('src')).to.eq(developer.image);
         expect(wrapper.find('h2').at(index).text()).to.eq(developer.companyName);
         expect(wrapper.find('Link').at(index).prop('to')).to.eq(`/developers/${developer._id}`);
@@ -158,14 +158,14 @@ describe('DevelopersIndex tests', () => {
   });
 
   it('should re-order the developers when the sort dropdown is changed', done => {
-    const e = { target: { value: 'name|desc' } };
+    const e = { target: { value: 'companyName|desc' } };
     promise.then(() => {
       wrapper.find('select').simulate('change', e);
       wrapper.update();
 
-      _.orderBy(data, 'compaName', 'desc').forEach((developer, index) => {
+      _.orderBy(data, 'companyName', 'desc').forEach((developer, index) => {
         expect(wrapper.find('img').at(index).prop('src')).to.eq(developer.image);
-        expect(wrapper.find('h2').at(index).text()).to.eq(developer.name);
+        expect(wrapper.find('h2').at(index).text()).to.eq(developer.companyName);
         expect(wrapper.find('Link').at(index).prop('to')).to.eq(`/developers/${developer._id}`);
       });
 
@@ -180,11 +180,11 @@ describe('DevelopersIndex tests', () => {
       wrapper.update();
       expect(wrapper.find('div.card').length).to.eq(1);
 
-      input.simulate('change', { target: { value: 'Code' } });
+      input.simulate('change', { target: { value: 'React' } });
       wrapper.update();
-      expect(wrapper.find('div.card').length).to.eq(2);
+      expect(wrapper.find('div.card').length).to.eq(5);
 
-      input.simulate('change', { target: { value: 'garbage' } });
+      input.simulate('change', { target: { value: 'cheese' } });
       wrapper.update();
       expect(wrapper.find('div.card').length).to.eq(0);
 
