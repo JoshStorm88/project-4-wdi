@@ -7,3 +7,48 @@
   border-radius: 20px;
   align-content: center;
 }
+
+.bubble blockquote {
+	margin: 10px 10px 0;
+	background: #fff;
+	padding: 60px;
+	position: relative;
+	border: none;
+	border-radius: 8px;
+	font-size: 1.25em;
+	color: black;
+  opacity: 0.7;
+
+}
+.bubble blockquote:before, .bubble blockquote:after {
+	content: "\201C";
+	position: absolute;
+	font-size: 80px;
+	padding: 10px;
+	line-height: 1;
+	color: black;
+}
+.bubble blockquote:before {
+	top: 0;
+	left: 10px;
+}
+.bubble blockquote:after {
+	content: "\201D";
+	right: 10px;
+	bottom: -.5em;
+}
+.bubble div {
+	width: 0;
+	height: 0;
+	border-left: 0 solid transparent;
+	border-right: 20px solid transparent;
+	border-top: 20px solid #fff;
+	margin: 0 0 0 60px;
+	margin-bottom: 10px;
+
+}
+.bubble cite {
+	padding-left: 20px;
+	font-size: 1.25em;
+  color: black;
+}

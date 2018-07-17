@@ -48,6 +48,7 @@ class DevelopersIndex extends React.Component {
       <section>
 
         <div className="filters">
+          <p>Search our site..</p>
           <input className="input" placeholder="Search" onChange={this.handleSearch} />
 
           <div className="control">
@@ -72,7 +73,7 @@ class DevelopersIndex extends React.Component {
                   </div>
                   <div className="card-content">
                     <div className="content">
-                      <h2 className="title">{developer.companyName}</h2>
+                      <h2 className="showTitle">{developer.companyName}</h2>
                     </div>
                   </div>
                 </div>
