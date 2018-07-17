@@ -35,9 +35,7 @@ class ProjectsShow extends React.Component {
       method: 'POST'
     });
 
-
-
-
+    console.log('Email Sent!');
   }
 
   render() {
