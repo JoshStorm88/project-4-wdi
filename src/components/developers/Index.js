@@ -48,16 +48,17 @@ class DevelopersIndex extends React.Component {
       <section>
 
         <div className="filters">
-          <p>Search our site..</p>
-          <input className="input" placeholder="Search" onChange={this.handleSearch} />
-
+          <p>Search</p>
+          <input className="input" placeholder="Company Name or Required skills" onChange={this.handleSearch} />
           <div className="control">
+
             <div className="select is-half">
               <select onChange={this.handleSort}>
-                <option value="companyName|asc">Name (A-Z)</option>
-                <option value="companyName|desc">Name (Z-A)</option>
+                <option value="companyName|asc">Sort Company Name by (A-Z)</option>
+                <option value="companyName|desc">Sort Company Name by (Z-A)</option>
               </select>
             </div>
+            <hr />
           </div>
         </div>
 

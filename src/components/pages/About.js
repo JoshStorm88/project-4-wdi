@@ -3,7 +3,7 @@ import React from 'react';
 const About = () => {
   return (
     <section className="aboutSection">
-      <hr />
+      
       <div>
         <img className="joshImage" src="https://i.pinimg.com/280x280_RS/4b/e3/3a/4be33a4f7cf7a1c42b1a1047168ad6ba.jpg"
           alt="Josh creator of FHP" />

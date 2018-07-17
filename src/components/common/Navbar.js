@@ -28,8 +28,8 @@ class Navbar extends React.Component {
       <nav className="navbar" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
           <Link to="/" className="navbar-item">
-            <img className="logo" src="https://i.imgur.com/M0fInVz.png"
-              alt="Four Horsemen Development Platform" />
+            <img className="logo" src="https://i.imgur.com/tV2rzLl.png"
+              alt="Four Horsemen Development Platform" /><p>Home</p>
           </Link>
 
           <a role="button"

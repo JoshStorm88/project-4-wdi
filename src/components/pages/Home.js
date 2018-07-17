@@ -22,6 +22,7 @@ const Home = () => {
                 <span className="am1 nl">Dragon slayers</span>
                 <span className="am1 nl">Dream weavers</span>
                 <span className="am1 nl">Heart breakers</span>
+                <span className="am1 nl">Four Horsemen</span>
               </strong>
             </div>
             <div className="animateWordLast"></div>
