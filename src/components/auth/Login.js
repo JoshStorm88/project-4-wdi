@@ -43,8 +43,8 @@ class AuthLogin extends React.Component {
           <input className="input" type="password" name="password" placeholder="Password" onChange={this.handleChange} />
         </div>
 
-        <button className="button">Submit</button>
-        <button className="button" href="/">Cancel</button>
+        <button className="button submitButton">Submit</button>
+        <button className="button cancelButton" href="/">Cancel</button>
         <img className="loginLogo" src="https://i.imgur.com/M0fInVz.png"
           alt="Four Horsemen Development Platform" />
       </form>

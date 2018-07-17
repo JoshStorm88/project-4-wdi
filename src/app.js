@@ -28,22 +28,22 @@ class App extends React.Component {
           <FlashMessages/>
           <Navbar />
           <Route exact path="/" component={Home} />
-          <section className="section">
-            <div className="container">
-              <Switch>
-                {/* <ProtectedRoute path="/developers/new" component={DevelopersNew} /> */}
-                {/* <ProtectedRoute path="/developers/:id/edit" component={DevelopersEdit} /> */}
-                <Route path="/developers/:id" component={DevelopersShow} />
-                <Route path="/developers" component={DevelopersIndex} />
-                <Route path="/register" component={AuthRegister} />
-                <Route path="/login" component={AuthLogin} />
-                <Route exact path="/about" component={About} />
-                <Route path="/projects/new" component={ProjectsNew} />
-                <Route path="/projects/:id/edit" component={ProjectsEdit} />
-                <Route path="/projects/:id" component={ProjectsShow} />
-              </Switch>
-            </div>
-          </section>
+
+          <div className="container background">
+            <Switch>
+              {/* <ProtectedRoute path="/developers/new" component={DevelopersNew} /> */}
+              {/* <ProtectedRoute path="/developers/:id/edit" component={DevelopersEdit} /> */}
+              <Route path="/developers/:id" component={DevelopersShow} />
+              <Route path="/developers" component={DevelopersIndex} />
+              <Route path="/register" component={AuthRegister} />
+              <Route path="/login" component={AuthLogin} />
+              <Route exact path="/about" component={About} />
+              <Route path="/projects/new" component={ProjectsNew} />
+              <Route path="/projects/:id/edit" component={ProjectsEdit} />
+              <Route path="/projects/:id" component={ProjectsShow} />
+            </Switch>
+          </div>
+
         </main>
       </BrowserRouter>
     );

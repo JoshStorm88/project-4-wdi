@@ -19,8 +19,9 @@ a {
     background: -webkit-linear-gradient(to right, #414345, #232526);
   }
 
-.section {
-  background: black;
+ .aboutSection {
+  background-color: black;
+
 }
 
 
@@ -60,6 +61,15 @@ p.content {
 .button {
   font-family: 'Poiret One', cursive;
   margin-left: 5px;
+}
+
+.submitButton {
+  background-color: #00b894;
+  color: black;
+}
+.cancelButton {
+  background-color: #e17055;
+  color: black;
 }
 
 .flashContainer {
