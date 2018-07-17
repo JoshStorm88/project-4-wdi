@@ -5,6 +5,7 @@
 @import 'about';
 @import 'newProject';
 @import 'slider';
+@import 'footer';
 
 * {
   font-family: 'Poiret One', cursive;
@@ -31,6 +32,14 @@ a {
     opacity: 0.7;
     margin: inherit;
   }
+}
+
+.devImage {
+  border-radius: 50%;
+}
+
+figure.image.is-square {
+
 }
 
 .showTitle {
@@ -98,4 +107,8 @@ div.column.is-two-thirds {
   padding-top: 50px;}
   .column.is-one-third{
     padding-top: 50px;
+}
+
+div.card-image {
+  background-color: black;
 }

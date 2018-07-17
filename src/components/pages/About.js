@@ -1,9 +1,10 @@
 import React from 'react';
+import Footer from '../common/Footer';
 
 const About = () => {
   return (
     <section className="aboutSection">
-      
+
       <div>
         <img className="joshImage" src="https://i.pinimg.com/280x280_RS/4b/e3/3a/4be33a4f7cf7a1c42b1a1047168ad6ba.jpg"
           alt="Josh creator of FHP" />
@@ -34,8 +35,7 @@ const About = () => {
       <br />
       <p>Email:</p><a href="mailto:test@example.com">James@4horse-men</a>
       <hr />
-
-
+      <Footer/>
     </section>
 
   );

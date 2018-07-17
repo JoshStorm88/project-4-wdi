@@ -92,7 +92,7 @@
 
 //Homepage Background animation//
 
-div.hero-body, main {
+div.hero-body, main, {
   background: url("https://wallpaper-house.com/data/out/8/wallpaper2you_249514.jpg") repeat 0 0;
   background-size: cover;
   width: 100%;
@@ -102,6 +102,20 @@ div.hero-body, main {
   box-sizing: border-box;
   -webkit-animation: slide 20s linear infinite;
   min-height: 1200px;
+}
+
+//Index cards animation
+
+div.card-image {
+  background: url("https://wallpaper-house.com/data/out/8/wallpaper2you_249514.jpg") repeat 0 0;
+  background-size: cover;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  height: 400px;
+  box-sizing: border-box;
+  -webkit-animation: slide 15s linear infinite;
+  min-height: 200px;
 }
 
 @-webkit-keyframes slide {
