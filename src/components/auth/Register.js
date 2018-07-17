@@ -64,9 +64,7 @@ class AuthRegister extends React.Component {
         <button className="button submitButton">Submit</button>
         <button className="button cancelButton" onChange={this.handleCancel}>Cancel</button>
 
-        <img className="registerLogo" src="https://i.imgur.com/M0fInVz.png"
-          alt="Four Horsemen Development Platform" />
-
+  
       </form>
     );
   }

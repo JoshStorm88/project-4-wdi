@@ -3,6 +3,7 @@
 @import 'logo';
 @import 'google';
 @import 'about';
+@import 'newProject';
 
 * {
   font-family: 'Poiret One', cursive;
@@ -57,15 +58,16 @@ h3.title {
 }
 
 p {
-  color: white;
+  color: #ff7f50;
   .content {
-    color: white;
+    color: #ff7f50;
   }
 }
 
 .button {
   font-family: 'Poiret One', cursive;
   margin-left: 5px;
+  background-color: #ff7f50;
 }
 
 select {
@@ -74,6 +76,10 @@ select {
 
 .input {
   font-family: 'Poiret One', cursive;
+}
+
+strong {
+  color: #ff7f50;
 }
 
 .submitButton {

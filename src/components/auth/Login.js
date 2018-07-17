@@ -45,8 +45,7 @@ class AuthLogin extends React.Component {
 
         <button className="button submitButton">Submit</button>
         <button className="button cancelButton" href="/">Cancel</button>
-        <img className="loginLogo" src="https://i.imgur.com/M0fInVz.png"
-          alt="Four Horsemen Development Platform" />
+  
       </form>
     );
   }
