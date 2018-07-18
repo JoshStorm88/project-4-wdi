@@ -45,7 +45,7 @@ class DevelopersIndex extends React.Component {
 
   render() {
     return (
-      <section>
+      <section className="indexSection">
 
         <div className="filters">
           <p>Search</p>

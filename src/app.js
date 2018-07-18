@@ -14,8 +14,7 @@ import ProjectsEdit from './components/projects/Edit';
 import AuthRegister from './components/auth/Register';
 import AuthLogin from './components/auth/Login';
 import Navbar from './components/common/Navbar';
-
-
+// import Footer from './components/common/Footer';
 import FlashMessages from './components/common/FlashMessages';
 
 import 'bulma';
@@ -30,7 +29,6 @@ class App extends React.Component {
           <FlashMessages/>
           <Navbar />
           <Route exact path="/" component={Home} />
-
           <div className="container background">
             <Switch>
               {/* <ProtectedRoute path="/developers/new" component={DevelopersNew} /> */}

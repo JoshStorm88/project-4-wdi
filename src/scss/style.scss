@@ -6,16 +6,10 @@
 @import 'newProject';
 @import 'slider';
 @import 'footer';
+@import 'buttons';
 
 * {
   font-family: 'Poiret One', cursive;
-}
-
-main {
-  background-image: url("https://wallpaper-house.com/data/out/8/wallpaper2you_249514.jpg");
-  background-size: cover;
-  min-height: 900px;
-
 }
 
 a {
@@ -36,10 +30,6 @@ a {
 
 .devImage {
   border-radius: 50%;
-}
-
-figure.image.is-square {
-
 }
 
 .showTitle {
@@ -63,7 +53,7 @@ h2.title {
   color: white;
 }
 
-h3.title {
+h3.title, .content {
   color: white;
 }
 
@@ -72,12 +62,6 @@ p {
   .content {
     color: #ff7f50;
   }
-}
-
-.button {
-  font-family: 'Poiret One', cursive;
-  margin-left: 5px;
-  background-color: #ff7f50;
 }
 
 select {
@@ -92,13 +76,6 @@ strong {
   color: #ff7f50;
 }
 
-.submitButton {
-  color: black;
-}
-.cancelButton {
-  color: black;
-}
-
 .flashContainer {
   position: sticky;
 }
@@ -111,4 +88,12 @@ div.column.is-two-thirds {
 
 div.card-image {
   background-color: black;
+}
+
+input.input {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  border: grey;
+  opacity: 0.7
 }

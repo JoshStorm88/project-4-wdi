@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import Auth from '../../lib/Auth';
+import Flash from '../../lib/Flash';
+
 
 
 class ProjectsShow extends React.Component {
@@ -24,16 +26,21 @@ class ProjectsShow extends React.Component {
       method: 'DELETE',
       headers: { Authorization: `Bearer ${Auth.getToken()}`}
     })
-      .then(() => this.props.history.push('/'));
+      .then(() => this.props.history.push('/developers'));
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
 
     axios({
-      url: `/api/projects/${this.props.match.params.id}`,
+      url: `/api/developers/${this.props.match.params.id}`,
       method: 'POST'
-    });
+    })
+      .catch(() => {
+        Flash.setMessage('primary', 'Your project is on its way to the developer!');
+        this.props.history.replace('/login');
+
+      });
 
     console.log('Email Sent!');
   }
@@ -55,8 +62,8 @@ class ProjectsShow extends React.Component {
           <h3 className="title">Skills Required: {this.state.project.skillsRequired}</h3>
 
           <hr />
-          <button className="button is-danger" onClick={this.handleDelete}>Cancel Project</button>
-          <button className="button is-primary" onClick={this.handleSubmit}>Send Project</button>
+          <button className="button submitButton" onClick={this.handleDelete}>Cancel Project</button>
+          <button className="button cancelButton" onClick={this.handleSubmit}>Send Project</button>
         </div>}
       </div>
     );
