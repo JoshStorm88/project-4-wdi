@@ -7,6 +7,10 @@
 @import 'slider';
 @import 'footer';
 @import 'buttons';
+@import 'textStyling';
+@import 'columns';
+
+
 
 * {
   font-family: 'Poiret One', cursive;
@@ -30,39 +34,9 @@ a {
 
 .devImage {
   border-radius: 50%;
+  opacity: 0.9;
 }
 
-.showTitle {
-  color: black;
-}
-
-h1.title {
-  color: white;
-  &.homeTitle {
-    color: white;
-  }
-}
-
-h2.title {
-  color: white;
-  &.subtitle {
-    color: white;
-  }
-}
-.homeSubtitle {
-  color: white;
-}
-
-h3.title, .content {
-  color: white;
-}
-
-p {
-  color: #ff7f50;
-  .content {
-    color: #ff7f50;
-  }
-}
 
 select {
   font-family: 'Poiret One', cursive;
@@ -80,20 +54,9 @@ strong {
   position: sticky;
 }
 
-div.column.is-two-thirds {
-  padding-top: 50px;}
-  .column.is-one-third{
-    padding-top: 50px;
-}
-
-div.card-image {
-  background-color: black;
-}
-
-input.input {
-  background-color: black;
-  color: white;
-  font-weight: bold;
-  border: grey;
-  opacity: 0.7
+.devPortfolio {
+  width: 400px;
+  height: 300px;
+  padding-top: 15px;
+  opacity: 0.9;
 }
