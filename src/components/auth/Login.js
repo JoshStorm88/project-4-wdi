@@ -45,7 +45,7 @@ class AuthLogin extends React.Component {
 
         <button className="button submitButton">Submit</button>
         <button className="button cancelButton" href="/">Cancel</button>
-  
+
       </form>
     );
   }

@@ -15,6 +15,7 @@ mongoose.connect(dbURI);
 
 app.use(bodyParser.json());
 app.use('/api', routes);
+app.get('/*', (req, res) => res.sendFile(`${__dirname}/public/index.html`));
 
 app.listen(port, () => console.log(`Galloping towards port ${port}`));
 
