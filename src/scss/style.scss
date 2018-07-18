@@ -6,16 +6,12 @@
 @import 'newProject';
 @import 'slider';
 @import 'footer';
+@import 'buttons';
+@import 'textStyling';
+@import 'columns';
 
 * {
   font-family: 'Poiret One', cursive;
-}
-
-main {
-  background-image: url("https://wallpaper-house.com/data/out/8/wallpaper2you_249514.jpg");
-  background-size: cover;
-  min-height: 900px;
-
 }
 
 a {
@@ -36,79 +32,22 @@ a {
 
 .devImage {
   border-radius: 50%;
-}
-
-figure.image.is-square {
-
-}
-
-.showTitle {
-  color: black;
-}
-
-h1.title {
-  color: white;
-  &.homeTitle {
-    color: white;
-  }
-}
-
-h2.title {
-  color: white;
-  &.subtitle {
-    color: white;
-  }
-}
-.homeSubtitle {
-  color: white;
-}
-
-h3.title {
-  color: white;
-}
-
-p {
-  color: #ff7f50;
-  .content {
-    color: #ff7f50;
-  }
-}
-
-.button {
-  font-family: 'Poiret One', cursive;
-  margin-left: 5px;
-  background-color: #ff7f50;
-}
-
-select {
-  font-family: 'Poiret One', cursive;
-}
-
-.input {
-  font-family: 'Poiret One', cursive;
-}
-
-strong {
-  color: #ff7f50;
-}
-
-.submitButton {
-  color: black;
-}
-.cancelButton {
-  color: black;
+  opacity: 0.9;
 }
 
 .flashContainer {
   position: sticky;
 }
 
-div.column.is-two-thirds {
-  padding-top: 50px;}
-  .column.is-one-third{
-    padding-top: 50px;
+.devPortfolio {
+  width: 400px;
+  height: 300px;
+  padding-top: 15px;
+  opacity: 0.9;
 }
-
-div.card-image {
-  background-color: black;
+  .devPortfolio:hover {
+     margin: 0 auto;
+    transition: transform .2s;
+    transform: scale(1.5);
+    padding: 50px;
 }
