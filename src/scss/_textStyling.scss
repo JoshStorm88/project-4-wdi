@@ -1,0 +1,48 @@
+
+
+
+h1.title {
+  color: white;
+  &.homeTitle {
+    color: white;
+  }
+}
+
+h2.title {
+  color: white;
+  &.subtitle {
+    color: white;
+
+  }
+}
+.homeSubtitle {
+  color: white;
+}
+
+h3.title, .content {
+  color: white;
+}
+
+p {
+  font-weight: bold;
+  color: #ff7f50;
+  .content {
+    color: #ff7f50;
+  }
+}
+
+.skillsColor {
+  color: #ff4757;
+}
+
+select {
+  font-family: 'Poiret One', cursive;
+}
+
+.input {
+  font-family: 'Poiret One', cursive;
+}
+
+strong {
+  color: #ff7f50;
+}

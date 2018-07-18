@@ -38,7 +38,7 @@ class ProjectsShow extends React.Component {
     })
       .catch(() => {
         Flash.setMessage('primary', 'Your project is on its way to the developer!');
-        this.props.history.replace('/login');
+        this.props.history.replace('/developers');
 
       });
 
@@ -49,17 +49,17 @@ class ProjectsShow extends React.Component {
     return (
       <div className="columns">
         {this.state.project && <div className="column">
-          <h2 className="title">Project Name: {this.state.project.projectName}</h2>
+          <h3 className="title">Project Name: <p>{this.state.project.projectName}</p></h3>
           <hr />
 
-          <h3 className="title">Project Type: {this.state.project.projectSize}</h3>
+          <h3 className="title">Project Type: <p>{this.state.project.projectType}</p></h3>
           <hr />
 
-          <h3 className="content">Project Brief: {this.state.project.projectBrief}</h3>
+          <h3 className="title">Project Brief: <p>{this.state.project.projectBrief}</p></h3>
 
           <hr />
 
-          <h3 className="title">Skills Required: {this.state.project.skillsRequired}</h3>
+          <h3 className="title">Skills Required: <p>{this.state.project.skillsRequired}</p></h3>
 
           <hr />
           <button className="button submitButton" onClick={this.handleDelete}>Cancel Project</button>

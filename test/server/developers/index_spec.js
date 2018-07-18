@@ -1,18 +1,11 @@
-/* global describe, it, beforeEach, before, after */
+/* global api, expect, describe, it, beforeEach */
 
-import React from 'react';
-import { expect } from 'chai';
-import { mount } from 'enzyme';
-import { MemoryRouter } from 'react-router-dom';
-import sinon from 'sinon';
-import axios from 'axios';
-import Promise from 'bluebird';
-import _ from 'lodash';
+const Developer = require('../../../models/developer');
+const User = require('../../../models/user');
+const jwt = require('jsonwebtoken');
+const {secret} = require('../../../config/environment');
 
-import DevelopersIndex from '../../../src/components/developers/Index';
-
-const data = [{
-  _id: 1,
+const developerData = [{
   companyName: 'Marks & Spencer Ltd',
   companySize: 'Large',
   description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
@@ -23,7 +16,6 @@ const data = [{
   telNumber: '0203 442 1767',
   email: 'info@MandS.com'
 },{
-  _id: 2,
   companyName: 'Achilleus Designs',
   companySize: 'Small',
   description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
@@ -34,7 +26,6 @@ const data = [{
   telNumber: '0208 112 2566',
   email: 'info@AD.com'
 },{
-  _id: 3,
   companyName: 'MI6',
   companySize: 'Unknown',
   description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
@@ -45,7 +36,6 @@ const data = [{
   telNumber: 'Unknown',
   email: 'info@government'
 },{
-  _id: 4,
   companyName: 'Network Code',
   companySize: 'Medium',
   description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
@@ -56,7 +46,6 @@ const data = [{
   telNumber: '0208 332 5566',
   email: 'info@Networkcode.com'
 },{
-  _id: 5,
   companyName: 'Julian & Gerry Coders',
   companySize: 'Medium',
   description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
@@ -67,7 +56,6 @@ const data = [{
   telNumber: '0208 117 1253',
   email: 'info@jandg.com'
 },{
-  _id: 6,
   companyName: 'Mike & Nicks\' Websites',
   companySize: 'Small',
   description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
@@ -76,9 +64,8 @@ const data = [{
   // location: 'Birmingham',
   location: {lat: 52.413154, lng: -1.919435},
   telNumber: '0208 328 8907',
-  email: 'info@MandNweb.com'
+  email: 'info@Mikeandnicweb.com'
 },{
-  _id: 7,
   companyName: 'Castrid\'s Web Studio',
   companySize: 'Small',
   description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
@@ -89,7 +76,6 @@ const data = [{
   telNumber: '0208 555 233',
   email: 'info@castrid.com'
 },{
-  _id: 8,
   companyName: 'Two & a half Towers',
   companySize: 'Small',
   description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
@@ -100,7 +86,6 @@ const data = [{
   telNumber: '0203 343 1283',
   email: 'info@twotowers.com'
 },{
-  _id: 9,
   companyName: 'Eye of Bella inc.',
   companySize: 'Small',
   description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
@@ -112,83 +97,67 @@ const data = [{
   email: 'info@bella.com'
 }];
 
-describe('DevelopersIndex tests', () => {
-  let wrapper;
-  let promise;
 
-  before(done => {
-    promise = Promise.resolve({ data });
-    sinon.stub(axios, 'get').returns(promise);
-    done();
-  });
+let token;
 
-  after(done => {
-    axios.get.restore();
-    done();
-  });
+describe('GET /developers', () => {
 
   beforeEach(done => {
-    wrapper = mount(
-      <MemoryRouter>
-        <DevelopersIndex />
-      </MemoryRouter>
-    );
-    done();
-  });
-
-  it('should render developers', done => {
-    promise.then(() => {
-      wrapper.update();
-      expect(wrapper.find('div.card').length).to.eq(9);
-      done();
-    })
-      .catch(done);
-  });
-
-  it('should render the correct data', done => {
-    promise.then(() => {
-      wrapper.update();
-      _.orderBy(data, 'companyName', 'asc').forEach((developer, index) => {
-        expect(wrapper.find('img').at(index).prop('src')).to.eq(developer.image);
-        expect(wrapper.find('h2').at(index).text()).to.eq(developer.companyName);
-        expect(wrapper.find('Link').at(index).prop('to')).to.eq(`/developers/${developer._id}`);
+    Developer.remove({})
+      .then(() => Developer.create(developerData))
+      .then(() => User.remove({}))
+      .then(() => User.create({
+        username: 'test',
+        firstName: 'test',
+        lastName: 'test',
+        email: 'test@test.com',
+        password: 'test',
+        passwordConfirmation: 'test'
+      }))
+      .then(user => {
+        token = jwt.sign({ sub: user._id}, secret, {expiresIn: '8h'});
+        done();
       });
-      done();
-    });
   });
 
-  it('should re-order the developers when the sort dropdown is changed', done => {
-    const e = { target: { value: 'companyName|desc' } };
-    promise.then(() => {
-      wrapper.find('select').simulate('change', e);
-      wrapper.update();
-
-      _.orderBy(data, 'companyName', 'desc').forEach((developer, index) => {
-        expect(wrapper.find('img').at(index).prop('src')).to.eq(developer.image);
-        expect(wrapper.find('h2').at(index).text()).to.eq(developer.companyName);
-        expect(wrapper.find('Link').at(index).prop('to')).to.eq(`/developers/${developer._id}`);
+  it('should return a 200 response', done => {
+    api.get('/api/developers')
+      .set('Authorization', `Bearer ${token}`)
+      .end((err, res) => {
+        expect(res.status).to.eq(200);
+        done();
       });
-
-      done();
-    });
   });
 
-  it('should filter the developers', done => {
-    const input = wrapper.find('input');
-    promise.then(() => {
-      input.simulate('change', { target: { value: 'Designs' } });
-      wrapper.update();
-      expect(wrapper.find('div.card').length).to.eq(1);
-
-      input.simulate('change', { target: { value: 'React' } });
-      wrapper.update();
-      expect(wrapper.find('div.card').length).to.eq(5);
-
-      input.simulate('change', { target: { value: 'cheese' } });
-      wrapper.update();
-      expect(wrapper.find('div.card').length).to.eq(0);
-
-      done();
-    });
+  it('should return an array', done => {
+    api.get('/api/developers')
+      .set('Authorization', `Bearer ${token}`)
+      .end((err, res) => {
+        expect(res.body).to.be.an('array');
+        done();
+      });
   });
+
+  it('should return an array of ojects', done => {
+    api.get('/api/developers')
+      .set('Authorization', `Bearer ${token}`)
+      .end((err, res) => {
+        res.body.forEach(developer => expect(developer).to.be.an('object'));
+        done();
+      });
+  });
+
+  it('should return the correct data', done => {
+    api.get('/api/developers')
+      .set('Authorization', `Bearer ${token}`)
+      .end((err, res) => {
+        res.body.forEach((developer, index) => {
+          expect(developer.companyName).to.eq(developerData[index].companyName);
+          expect(developer.companySize).to.eq(developerData[index].companySize);
+          expect(developer.description).to.eq(developerData[index].description);
+        });
+        done();
+      });
+  });
+
 });
