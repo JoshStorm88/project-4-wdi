@@ -1,7 +1,5 @@
 
-.showTitle {
-  color: black;
-}
+
 
 h1.title {
   color: white;
@@ -14,6 +12,7 @@ h2.title {
   color: white;
   &.subtitle {
     color: white;
+
   }
 }
 .homeSubtitle {
@@ -34,4 +33,16 @@ p {
 
 .skillsColor {
   color: #ff4757;
+}
+
+select {
+  font-family: 'Poiret One', cursive;
+}
+
+.input {
+  font-family: 'Poiret One', cursive;
+}
+
+strong {
+  color: #ff7f50;
 }

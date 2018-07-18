@@ -31,8 +31,6 @@ const Home = () => {
           </div>
           <div>
             <hr />
-            {/* <img className="HomeLogo" src="https://i.imgur.com/tV2rzLl.png"
-              alt="Four Horsemen Development Platform" /> */}
             <SimpleSlider/>
             <hr />
             <p className="clickMe"> Click the left of right buttons to check out some of this weeks featured work.. </p>

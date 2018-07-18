@@ -76,7 +76,7 @@ const data = [{
   // location: 'Birmingham',
   location: {lat: 52.413154, lng: -1.919435},
   telNumber: '0208 328 8907',
-  email: 'info@Mikeandnicweb.com'
+  email: 'info@MandNweb.com'
 },{
   _id: 7,
   companyName: 'Castrid\'s Web Studio',
