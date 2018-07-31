@@ -2,7 +2,7 @@ const router = require('express').Router();
 const developers = require('../controllers/developers');
 const projects = require('../controllers/projects');
 const auth = require('../controllers/auth');
-const secureRoute = require('../lib/secureroute');
+const secureRoute = require('../lib/secureRoute');
 
 router.route('/developers')
   .get(developers.index)
