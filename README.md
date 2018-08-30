@@ -4,6 +4,7 @@
 <hr>
 ![image](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png)
 
+
 # GA WDI-34 Project 4 - Four Horsemen Development Platform
 For our final project, we were given a week to build an app using everything we have learned over the course. While initially I started solo I eventually decided to work in a team of two.
 
@@ -23,7 +24,7 @@ For our final project, we were given a week to build an app using everything we 
 - Mongoose
 - Express
 
-##### Visit our [Site ](https://four-horsemen-platform.herokuapp.com) here
+### Visit the [Site ](https://four-horsemen-platform.herokuapp.com) here
 ---
 ## Setup instructions
 - Clone or download the repo
